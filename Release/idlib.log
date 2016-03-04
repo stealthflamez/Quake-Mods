@@ -1,0 +1,18 @@
+﻿Build started 3/4/2016 1:11:17 AM.
+     1>Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\idlib.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       Lib:
+         All outputs are up-to-date.
+         idlib.vcxproj -> C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.lib
+       FinalizeBuildStatus:
+         Deleting file "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.unsuccessfulbuild".
+         Touching "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.lastbuildstate".
+     1>Done Building Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\idlib.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.11

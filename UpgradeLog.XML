@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="q4sdk">
+</Property><Property Name="Solution File" Value="C:\Users\Jeff\IT266\Quake-Mods\quake4\q4sdk.sln">
+</Property><Property Name="Date" Value="Thursday, March 3, 2016">
+</Property><Property Name="Time" Value="22:56 PM">
+</Property></Properties><Event ErrorLevel="3" Project="game" Source="game.vcproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="idlib" Source="idlib.vcproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="3" Project="mpgame" Source="mpgame.vcproj" Description="No Conversion Required">
+</Event><Event ErrorLevel="0" Project="" Source="q4sdk.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="q4sdk.sln" Description="Converted">
+</Event></UpgradeLog>
