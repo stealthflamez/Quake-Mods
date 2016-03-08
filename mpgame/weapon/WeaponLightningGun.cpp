@@ -320,6 +320,7 @@ void rvWeaponLightningGun::Think ( void ) {
 		nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 		Attack ( currentPath.target, dir, power );
 		for ( i = 0; i < chainLightning.Num(); i ++, power *= 0.75f ) {
+			owner->zoomFov.Init( gameLocal.time , 1, owner->CalcFov( true ), 50);
 			Attack ( chainLightning[i].target, chainLightning[i].normal, power );
 		}
 

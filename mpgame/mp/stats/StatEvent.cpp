@@ -257,6 +257,13 @@ A player took damage from another player
 ================
 */
 rvStatDamageTaken::rvStatDamageTaken( int t, int p, int w, int d ) : rvStat( t ) { 
+	//jo83 checks if weapon is shotgun was fired to slow
+	if( gameLocal.GetLocalPlayer()->GetWeaponIndex("weapon_shotgun") == w )
+	{
+		gameLocal.Printf("sgot confimr");
+		//gameLocal.clientEntities[w]->physics
+			//enphysicsObj.SetSpeed( 100, pm_crouchspeed.GetFloat() );
+	}
 	playerClientNum = p;
 	weapon = w;
 	damage = d;

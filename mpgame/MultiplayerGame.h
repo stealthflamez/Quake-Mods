@@ -528,7 +528,7 @@ public:
 
 	void			PlayerStats( int clientNum, char *data, const int len );
 
-	//jo83
+	//jo83 added function
 	void			newGun( idPlayer* player );
 
 	void			AddTeamScore ( int team, int amount );

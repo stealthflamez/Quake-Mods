@@ -440,7 +440,7 @@ public:
 	void					SpawnFromSpawnSpot( void );
 	void					SpawnToPoint( const idVec3	&spawn_origin, const idAngles &spawn_angles );
 	void					SetClipModel( bool forceSpectatorBBox = false );	// spectator mode uses a different bbox size
-	//jo83
+	//jo83 new function
 	void					NewGun();
 
 	void					SavePersistantInfo( void );
@@ -583,6 +583,8 @@ public:
  	bool					CanShowWeaponViewmodel		( void ) const;
 
 	void					TriggerHitSound				( bool armor );
+	//jo83	made public
+	idInterpolate<float>	zoomFov;
 
 	virtual bool			HandleSingleGuiCommand( idEntity *entityGui, idLexer *src );
 	bool					GuiActive( void ) { return focusType == FOCUS_GUI; }
@@ -861,7 +863,7 @@ private:
 	playerTourneyStatus_t	tourneyStatus;
 	bool					isStrogg;
 
-	idInterpolate<float>	zoomFov;
+	//idInterpolate<float>	zoomFov;
 	idInterpolate<float>	centerView;
 	bool					fxFov;
 

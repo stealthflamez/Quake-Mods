@@ -486,10 +486,11 @@ void idMultiplayerGame::ClearGuis() {
 	ClearVote();
 }
 
-//jo83
+//jo83 drops items and gives new gun depending on poiints
 void idMultiplayerGame::newGun( idPlayer* player ){
 	
 	gameLocal.Printf("test2");
+	player->DropWeapon();
 	switch ( playerState[player->entityNumber].fragCount )
 			{
 			case 2:
@@ -8298,7 +8299,7 @@ void idMultiplayerGame::AddTeamScore ( int team, int amount ) {
 
 	teamScore[ team ] += amount;
 }
-//jo83
+//jo83 8313 added the function and test point
 void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 	if( player == NULL ) {
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - NULL player specified" );
