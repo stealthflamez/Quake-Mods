@@ -1,4 +1,4 @@
-﻿Build started 3/5/2016 4:28:51 AM.
+﻿Build started 3/9/2016 12:42:37 AM.
      1>Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\idlib.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:00.07

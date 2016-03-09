@@ -93,7 +93,7 @@ void rvStatKill::RegisterInGame( rvPlayerStat* stats ) {
 
 	// no award processing for suicides
 	if( victimClientNum == playerClientNum ) {
-		stats[ playerClientNum ].suicides++;		
+		//jo83 removes suicide? stats[ playerClientNum ].suicides++;		
 		return;
 	}
 
@@ -257,10 +257,10 @@ A player took damage from another player
 ================
 */
 rvStatDamageTaken::rvStatDamageTaken( int t, int p, int w, int d ) : rvStat( t ) { 
-	//jo83 checks if weapon is shotgun was fired to slow
-	if( gameLocal.GetLocalPlayer()->GetWeaponIndex("weapon_shotgun") == w )
+	//jo83 checks if weapon is shotgun was fired to slow REMOVE
+	if( gameLocal.GetLocalPlayer()->GetCurrentWeapon() == w )
 	{
-		gameLocal.Printf("sgot confimr");
+		gameLocal.Printf("weapon num: %d ", w);
 		//gameLocal.clientEntities[w]->physics
 			//enphysicsObj.SetSpeed( 100, pm_crouchspeed.GetFloat() );
 	}

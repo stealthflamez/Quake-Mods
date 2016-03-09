@@ -493,18 +493,23 @@ void idMultiplayerGame::newGun( idPlayer* player ){
 	player->DropWeapon();
 	switch ( playerState[player->entityNumber].fragCount )
 			{
-			case 2:
+			case 4:
+				gameLocal.Printf("testlil");
+				player->GiveItem( "weapon_gauntlet" );
+				break;
+			case 3:
 				gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_lightninggun" );
 				break;
-			case 1:
+			case 2:
 				gameLocal.Printf("testrock");
-				player->GiveItem( "weapon_rocketlauncher" );
+				player->GiveItem( "weapon_dmg" );
 				break;
-			case 0:
+			case 1:
 				gameLocal.Printf("testnail");
 				player->GiveItem( "weapon_nailgun" );
 			default:
+				player->GiveItem( "weapon_blaster" );
 				break;
 			}
 }
@@ -1813,6 +1818,7 @@ idPlayer* idMultiplayerGame::FragLeader( void ) {
 idMultiplayerGame::PlayerDeath
 ================
 */
+//jo83 removed suiside and made made gauntlet remove a score unless they have 0 points
 void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int methodOfDeath ) {
 	// don't do PrintMessageEvent
 	assert( !gameLocal.isClient );
@@ -1827,10 +1833,18 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 				if( gameLocal.IsFlagGameType() ) {
 					AddPlayerTeamScore( killer == dead ? dead : killer, -1 );
 				} else {
-					AddPlayerScore( killer == dead ? dead : killer, -1 );
+					AddPlayerScore( killer == dead ? dead : killer, 0 );
 				}
 
-			} else {
+			}
+			//nade it so kills with the gauntlet will take a point away from dead
+			if(killer->GetCurrentWeapon() == 9)
+			{
+				gameLocal.Printf("at this point");
+				AddPlayerScore( dead, -1);
+			}
+
+			else {
 				// mark a kill
 				AddPlayerScore( killer, 1 );
 			}
@@ -8299,7 +8313,7 @@ void idMultiplayerGame::AddTeamScore ( int team, int amount ) {
 
 	teamScore[ team ] += amount;
 }
-//jo83 8313 added the function and test point
+//jo83 8313 added the function newGun()
 void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 	if( player == NULL ) {
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - NULL player specified" );
@@ -8310,11 +8324,15 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - Bad player entityNumber '%d'\n", player->entityNumber );
 		return;
 	}
-	newGun( player );
-	gameLocal.Printf("test1");
+	//stop player from getting score with gauntlet
+	if(player->GetCurrentWeapon() == 9){
+		gameLocal.Printf("got here");
+		return;
+	}
+
 	playerState[ player->entityNumber ].fragCount += amount;
 	playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
-	
+	newGun( player );
 }
 
 void idMultiplayerGame::AddPlayerTeamScore( idPlayer* player, int amount ) {
