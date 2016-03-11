@@ -1852,20 +1852,12 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 				if( gameLocal.IsFlagGameType() ) {
 					AddPlayerTeamScore( killer == dead ? dead : killer, -1 );
 				} else {
-					AddPlayerScore( killer == dead ? dead : killer, 0 );
+					AddPlayerScore( killer == dead ? dead : killer, -1 );
 				}
 
 			} else {
-				AddPlayerScore( killer, methodOfDeath );
-				/*
 				// mark a kill
-			if(killer->GetCurrentWeapon() == 9)
-				{
-				AddPlayerScore( dead, -1);
-				}
-			else{
-				AddPlayerScore( killer, methodOfDeath );
-				}*/
+				AddPlayerScore( killer, 1 );
 			}
 			
 			// additional CTF points
@@ -1877,15 +1869,26 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 			if( gameLocal.gameType == GAME_TDM ) {
 				if ( killer == dead || killer->team == dead->team ) {
 					// suicide or teamkill
-					AddTeamScore( killer->team, 0 );
+					AddTeamScore( killer->team, -1 );
 				} else {
-					AddTeamScore( killer->team, 0 );
+					AddTeamScore( killer->team, 1 );
 				}			
 			}
 		} else {
+			//jo83 this is where DM does life stuff god damn it
 			// in tourney mode, we don't award points while in the waiting arena
 			if( gameLocal.gameType != GAME_TOURNEY || ((rvTourneyGameState*)gameState)->GetArena( killer->GetArena() ).GetState() != AS_WARMUP ) {
-				AddPlayerScore( killer, ( killer == dead ) ? -1 : 1 );
+				if ( killer != dead )
+				{
+					if(killer->GetCurrentWeapon() == 9)
+						{
+							AddPlayerScore( dead, -1);
+						}
+					else
+						{
+							AddPlayerScore( killer, 1 );
+						}
+				}
 			}
 
 			// in tourney mode, frags track performance over the entire level load, team score keeps track of
@@ -1899,16 +1902,16 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 
 		// flag gametypes subtract points from teamscore, not playerscore
 		if( gameLocal.IsFlagGameType() ) {
-			AddPlayerTeamScore( dead, 0 );
+			AddPlayerTeamScore( dead, -1 );
 		} else {
 			AddPlayerScore( dead, -1 );
 		}
 
 		if( gameLocal.gameType == GAME_TOURNEY ) {
-			AddPlayerTeamScore( dead, 0 );
+			AddPlayerTeamScore( dead, -1 );
 		}
 		if( gameLocal.gameType == GAME_TDM ) {
-			AddTeamScore( dead->team, 0 );
+			AddTeamScore( dead->team, -1 );
 		}
 	}
 	
@@ -8334,7 +8337,6 @@ void idMultiplayerGame::AddTeamScore ( int team, int amount ) {
 }
 //jo83 8313 added the function newGun() and test for suicide made soul reaver final point
 void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
-	gameLocal.Printf("amount num: %d ", amount);
 	if( player == NULL ) {
 		gameLocal.Printf("got here and may not leeting dead people have score changes");
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - NULL player specified" );
@@ -8345,18 +8347,9 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - Bad player entityNumber '%d'\n", player->entityNumber );
 		return;
 	}
-	//fixed it ??
-	if(amount == -1){
-		gameLocal.Printf("maybe got to the kill");
-		playerState[ player->entityNumber ].fragCount += amount;
-		playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
+	if( playerState[ player->entityNumber ].fragCount + amount < 0 ){
 		return;
 	}
-	//stop player from getting score with gauntlet
-	if(player->GetCurrentWeapon() == 9 && playerState[ player->entityNumber ].fragCount != 9){
-		return;
-	}
-
 	playerState[ player->entityNumber ].fragCount += amount;
 	playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
 	newGun( player );

@@ -1,4 +1,4 @@
-﻿Build started 3/10/2016 11:11:12 PM.
+﻿Build started 3/11/2016 5:42:55 PM.
      1>Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\mpgame.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Release\mpgame.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -8,7 +8,7 @@
          MultiplayerGame.cpp
      1>mpgame\MultiplayerGame.cpp(1607): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>mpgame\MultiplayerGame.cpp(3641): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mpgame\MultiplayerGame.cpp(3644): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\mpgame.dll" /INCREMENTAL:NO /NOLOGO .\Release\idLib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\mpgame\mpgame.def" /MANIFEST /ManifestFile:".\Release\mpgame.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Release\mpgamex86.pdb" /MAP:".\Release\mpgamex86.map" /MAPINFO:EXPORTS /STACK:"4194304" /LARGEADDRESSAWARE /OPT:REF /OPT:ICF /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE:NO /MACHINE:X86 /DLL .\Release\mpgame/Actor.obj
@@ -182,4 +182,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.21
+Time Elapsed 00:00:03.59
