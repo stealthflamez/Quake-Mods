@@ -488,26 +488,45 @@ void idMultiplayerGame::ClearGuis() {
 
 //jo83 drops items and gives new gun depending on poiints
 void idMultiplayerGame::newGun( idPlayer* player ){
-	
-	gameLocal.Printf("test2");
 	player->DropWeapon();
 	switch ( playerState[player->entityNumber].fragCount )
 			{
-			case 4:
-				gameLocal.Printf("testlil");
+			case 9:
+				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_gauntlet" );
 				break;
-			case 3:
-				gameLocal.Printf("testlil");
+			case 8:
+				//gameLocal.Printf("testlil");
+				player->GiveItem( "weapon_napalmgun" );
+				break;
+
+			case 7:
+				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_lightninggun" );
 				break;
+			case 6:
+				//gameLocal.Printf("testlil");
+				player->GiveItem( "weapon_railgun" );
+				break;
+			case 5:
+				//gameLocal.Printf("testlil");
+				player->GiveItem( "weapon_rocketlauncher" );
+				break;
+			case 4:
+				//gameLocal.Printf("testlil");
+				player->GiveItem( "weapon_grenadelauncher" );
+				break;
+			case 3:
+				//gameLocal.Printf("testlil");
+				player->GiveItem( "weapon_hyperblaster" );
+				break;
 			case 2:
-				gameLocal.Printf("testrock");
-				player->GiveItem( "weapon_dmg" );
+				//gameLocal.Printf("testrock");
+				player->GiveItem( "weapon_shotgun" );
 				break;
 			case 1:
-				gameLocal.Printf("testnail");
-				player->GiveItem( "weapon_nailgun" );
+				//gameLocal.Printf("testnail");
+				player->GiveItem( "weapon_machinegun" );
 			default:
 				player->GiveItem( "weapon_blaster" );
 				break;
@@ -1836,17 +1855,17 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 					AddPlayerScore( killer == dead ? dead : killer, 0 );
 				}
 
-			}
-			//nade it so kills with the gauntlet will take a point away from dead
-			if(killer->GetCurrentWeapon() == 9)
-			{
-				gameLocal.Printf("at this point");
-				AddPlayerScore( dead, -1);
-			}
-
-			else {
+			} else {
+				AddPlayerScore( killer, methodOfDeath );
+				/*
 				// mark a kill
-				AddPlayerScore( killer, 1 );
+			if(killer->GetCurrentWeapon() == 9)
+				{
+				AddPlayerScore( dead, -1);
+				}
+			else{
+				AddPlayerScore( killer, methodOfDeath );
+				}*/
 			}
 			
 			// additional CTF points
@@ -1858,9 +1877,9 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 			if( gameLocal.gameType == GAME_TDM ) {
 				if ( killer == dead || killer->team == dead->team ) {
 					// suicide or teamkill
-					AddTeamScore( killer->team, -1 );
+					AddTeamScore( killer->team, 0 );
 				} else {
-					AddTeamScore( killer->team, 1 );
+					AddTeamScore( killer->team, 0 );
 				}			
 			}
 		} else {
@@ -1880,16 +1899,16 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 
 		// flag gametypes subtract points from teamscore, not playerscore
 		if( gameLocal.IsFlagGameType() ) {
-			AddPlayerTeamScore( dead, -1 );
+			AddPlayerTeamScore( dead, 0 );
 		} else {
 			AddPlayerScore( dead, -1 );
 		}
 
 		if( gameLocal.gameType == GAME_TOURNEY ) {
-			AddPlayerTeamScore( dead, -1 );
+			AddPlayerTeamScore( dead, 0 );
 		}
 		if( gameLocal.gameType == GAME_TDM ) {
-			AddTeamScore( dead->team, -1 );
+			AddTeamScore( dead->team, 0 );
 		}
 	}
 	
@@ -8310,12 +8329,14 @@ void idMultiplayerGame::AddTeamScore ( int team, int amount ) {
 	if ( team < 0 || team >= TEAM_MAX ) {
 		return;
 	}
-
+	gameLocal.Printf("are you here?");
 	teamScore[ team ] += amount;
 }
-//jo83 8313 added the function newGun()
+//jo83 8313 added the function newGun() and test for suicide made soul reaver final point
 void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
+	gameLocal.Printf("amount num: %d ", amount);
 	if( player == NULL ) {
+		gameLocal.Printf("got here and may not leeting dead people have score changes");
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - NULL player specified" );
 		return;
 	}
@@ -8324,9 +8345,15 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - Bad player entityNumber '%d'\n", player->entityNumber );
 		return;
 	}
+	//fixed it ??
+	if(amount == -1){
+		gameLocal.Printf("maybe got to the kill");
+		playerState[ player->entityNumber ].fragCount += amount;
+		playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
+		return;
+	}
 	//stop player from getting score with gauntlet
-	if(player->GetCurrentWeapon() == 9){
-		gameLocal.Printf("got here");
+	if(player->GetCurrentWeapon() == 9 && playerState[ player->entityNumber ].fragCount != 9){
 		return;
 	}
 

@@ -1970,6 +1970,7 @@ void idPlayer::Spawn( void ) {
 
 		if ( !gameLocal.isClient ) {
 			// set yourself ready to spawn. idMultiplayerGame will decide when/if appropriate and call SpawnFromSpawnSpot
+			//maybe this jo83
 			SetupWeaponEntity( );
 			SpawnFromSpawnSpot( );
 			spectator = entityNumber;
@@ -1991,7 +1992,7 @@ void idPlayer::Spawn( void ) {
 			ent->ActivateTargets( this );
 		}
 	}
-	
+	//jo83 spwan waeapons maybe make idea weappon order of guns
 	if ( gameLocal.world->spawnArgs.GetBool( "no_Weapons" ) ) {
 		hiddenWeapon = true;
 		if ( weapon ) {
@@ -8061,24 +8062,6 @@ void idPlayer::SetClipModel( bool forceSpectatorBBox ) {
 	physicsObj.SetClipModel( newClip, 1.0f );
 }
 
-/*jo83
-void idPlayer::NewGun(){
-	gameLocal.Printf("test3");
-	switch ( gameLocal.mpGame.playerState[gameLocal.GetLocalPlayer()->entityNumber].fragCount )
-			{
-			case 2:
-				gameLocal.GetLocalPlayer()->GiveItem( "weapon_5" );
-				break;
-			case 1:
-				gameLocal.GetLocalPlayer()->GiveItem( "weapon_4" );
-				break;
-			case 0:
-				gameLocal.GetLocalPlayer()->GiveItem( "weapon_3" );
-			default:
-				break;
-			}
-}
-*/
 /*
 ==============
 idPlayer::EnterVehicle
@@ -9857,7 +9840,7 @@ void idPlayer::Killed( idEntity *inflictor, idEntity *attacker, int damage, cons
  	StopSound( SND_CHANNEL_BODY2, false );
 
 	fl.takedamage = true;		// can still be gibbed
-
+	//jo83 look at this later
 	if ( weapon ) {					// cnicholson: Fix for crash if player dies while in vehicle
 		weapon->OwnerDied();		// get rid of weapon
 		if ( !noDrop ) {

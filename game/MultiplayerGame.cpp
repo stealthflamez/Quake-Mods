@@ -1796,12 +1796,18 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 				if( gameLocal.IsFlagGameType() ) {
 					AddPlayerTeamScore( killer == dead ? dead : killer, -1 );
 				} else {
-					AddPlayerScore( killer == dead ? dead : killer, -1 );
+					AddPlayerScore( killer == dead ? dead : killer, 0 );
 				}
 
 			} else {
 				// mark a kill
+			if(killer->GetCurrentWeapon() == 9)
+				{
+				AddPlayerScore( dead, -5);
+				}
+			else{
 				AddPlayerScore( killer, 1 );
+				}
 			}
 			
 			// additional CTF points
@@ -8253,9 +8259,21 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 		gameLocal.Warning( "idMultiplayerGame::AddPlayerScore() - Bad player entityNumber '%d'\n", player->entityNumber );
 		return;
 	}
+	//fixed it ??
+	if(amount == -5){
+		gameLocal.Printf("maybe got to the kill");
+		SetPlayerScore(player, playerState[ player->entityNumber ].fragCount - 1);
+		playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
+		return;
+	}
+	//stop player from getting score with gauntlet
+	if(player->GetCurrentWeapon() == 9){
+		return;
+	}
 
 	playerState[ player->entityNumber ].fragCount += amount;
 	playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
+	newGun( player );
 }
 
 void idMultiplayerGame::AddPlayerTeamScore( idPlayer* player, int amount ) {

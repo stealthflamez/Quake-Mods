@@ -257,13 +257,13 @@ A player took damage from another player
 ================
 */
 rvStatDamageTaken::rvStatDamageTaken( int t, int p, int w, int d ) : rvStat( t ) { 
-	//jo83 checks if weapon is shotgun was fired to slow REMOVE
+	/*jo83 checks if weapon is shotgun was fired to slow REMOVE
 	if( gameLocal.GetLocalPlayer()->GetCurrentWeapon() == w )
 	{
-		gameLocal.Printf("weapon num: %d ", w);
+		//gameLocal.Printf("weapon num: %d ", w);
 		//gameLocal.clientEntities[w]->physics
 			//enphysicsObj.SetSpeed( 100, pm_crouchspeed.GetFloat() );
-	}
+	}*/
 	playerClientNum = p;
 	weapon = w;
 	damage = d;
