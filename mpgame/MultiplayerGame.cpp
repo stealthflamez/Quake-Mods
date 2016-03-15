@@ -486,49 +486,46 @@ void idMultiplayerGame::ClearGuis() {
 	ClearVote();
 }
 
-//jo83 drops items and gives new gun depending on poiints
+//jo83 drops items and gives new gun depending on poiints	for some reason gun 0 and 1 are both being called
 void idMultiplayerGame::newGun( idPlayer* player ){
 	player->DropWeapon();
+	gameLocal.Printf("frag :%d", playerState[player->entityNumber].fragCount);
 	switch ( playerState[player->entityNumber].fragCount )
 			{
 			case 9:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_gauntlet" );
 				break;
 			case 8:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_napalmgun" );
 				break;
 
 			case 7:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_lightninggun" );
 				break;
 			case 6:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_railgun" );
 				break;
 			case 5:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_rocketlauncher" );
 				break;
 			case 4:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_grenadelauncher" );
 				break;
 			case 3:
-				//gameLocal.Printf("testlil");
 				player->GiveItem( "weapon_hyperblaster" );
 				break;
 			case 2:
-				//gameLocal.Printf("testrock");
 				player->GiveItem( "weapon_shotgun" );
 				break;
 			case 1:
-				//gameLocal.Printf("testnail");
-				player->GiveItem( "weapon_machinegun" );
-			default:
+				gameLocal.Printf("test 4");
 				player->GiveItem( "weapon_blaster" );
+				break;
+			case 0:
+				gameLocal.Printf("test 3");
+				player->GiveItem( "weapon_machinegun" );
+				break;
+			default:
 				break;
 			}
 }
@@ -1837,7 +1834,6 @@ idPlayer* idMultiplayerGame::FragLeader( void ) {
 idMultiplayerGame::PlayerDeath
 ================
 */
-//jo83 removed suiside and made made gauntlet remove a score unless they have 0 points
 void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int methodOfDeath ) {
 	// don't do PrintMessageEvent
 	assert( !gameLocal.isClient );
@@ -8353,6 +8349,7 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 	playerState[ player->entityNumber ].fragCount += amount;
 	playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
 	newGun( player );
+
 }
 
 void idMultiplayerGame::AddPlayerTeamScore( idPlayer* player, int amount ) {

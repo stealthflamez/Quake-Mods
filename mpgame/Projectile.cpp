@@ -222,7 +222,7 @@ idEntity *idProjectile::GetOwner( void ) const {
 
 /*
 ================
-idProjectile::SetSpeed
+idProjectile::SetSpeed //jo83 this is where velocity is used maybe
 ================
 */
 void idProjectile::SetSpeed( float s, int accelTime ) {
@@ -253,7 +253,7 @@ void idProjectile::Create( idEntity* _owner, const idVec3 &start, const idVec3 &
 	idVec3		light_offset;
 	idVec3		tmp;
 	idMat3		axis;
-	
+
 	Unbind();
 
 	axis = dir.ToMat3();
@@ -297,6 +297,10 @@ void idProjectile::Create( idEntity* _owner, const idVec3 &start, const idVec3 &
  	UpdateVisuals();
 
 	state = CREATED;
+
+	//jo83 add an array that hold ass missle that owner has
+	//gameLocal.Printf("test 2");
+	//gameLocal.GetLocalPlayer()->addRockets( this );
 }
 
 /*

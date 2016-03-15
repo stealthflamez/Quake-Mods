@@ -2941,8 +2941,6 @@ void Cmd_ToggleBuyMenu_f( const idCmdArgs& args ) {
 }
 
 void Cmd_BuyItem_f( const idCmdArgs& args ) {
-	//jo83 debug to test points gains
-	gameLocal.mpGame.AddPlayerScore(gameLocal.GetLocalPlayer(), 1);
 	idPlayer* player = gameLocal.GetLocalPlayer();
 	if ( !player ) {
 		common->Printf( "ERROR: Cmd_BuyItem_f() failed, since GetLocalPlayer() was NULL.\n", player );

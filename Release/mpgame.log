@@ -1,15 +1,21 @@
-﻿Build started 3/11/2016 5:42:55 PM.
-     1>Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\mpgame.vcxproj" on node 2 (build target(s)).
+﻿Build started 3/14/2016 8:18:59 PM.
+     1>Project "C:\Users\Jeff\Desktop\Quake-Mods-master\mpgame.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Release\mpgame.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Ox /Ob1 /Oi /Oy- /D NDEBUG /D _WINDOWS /D _FINAL /D GAME_DLL /D GAME_MPAPI /D Q4SDK /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS- /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu /Fp".\Release\mpgame/mpgame.pch" /Fo".\Release\mpgame/" /Fd".\Release\mpgamex86.pdb" /Gd /TP /analyze- /errorReport:prompt mpgame\MultiplayerGame.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Ox /Ob1 /Oi /Oy- /D NDEBUG /D _WINDOWS /D _FINAL /D GAME_DLL /D GAME_MPAPI /D Q4SDK /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS- /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu /Fp".\Release\mpgame/mpgame.pch" /Fo".\Release\mpgame/" /Fd".\Release\mpgamex86.pdb" /Gd /TP /analyze- /errorReport:prompt mpgame\MultiplayerGame.cpp mpgame\Player.cpp
          MultiplayerGame.cpp
-     1>mpgame\MultiplayerGame.cpp(1607): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mpgame\MultiplayerGame.cpp(1604): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>mpgame\MultiplayerGame.cpp(3644): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>mpgame\MultiplayerGame.cpp(3640): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+         Player.cpp
+     1>mpgame\Player.cpp(3541): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+     1>mpgame\Player.cpp(3546): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
+         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Release\mpgame.dll" /INCREMENTAL:NO /NOLOGO .\Release\idLib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\mpgame\mpgame.def" /MANIFEST /ManifestFile:".\Release\mpgame.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Release\mpgamex86.pdb" /MAP:".\Release\mpgamex86.map" /MAPINFO:EXPORTS /STACK:"4194304" /LARGEADDRESSAWARE /OPT:REF /OPT:ICF /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE:NO /MACHINE:X86 /DLL .\Release\mpgame/Actor.obj
          .\Release\mpgame/AF.obj
@@ -170,16 +176,16 @@
          .\Release\mpgame/Anim_Blend.obj
          .\Release\mpgame/Anim_Import.obj
          .\Release\mpgame/Anim_Testmodel.obj
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.lib" /MACHINE:I386 /fixed:no 
+         "C:\Users\Jeff\Desktop\Quake-Mods-master\Release\idlib.lib" /MACHINE:I386 /fixed:no 
             Creating library .\Release\mpgame.lib and object .\Release\mpgame.exp
-         mpgame.vcxproj -> C:\Users\Jeff\IT266\Quake-Mods\quake4\.\Release\mpgame.dll
+         mpgame.vcxproj -> C:\Users\Jeff\Desktop\Quake-Mods-master\.\Release\mpgame.dll
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:".\Release\mpgame.dll;#2" /manifest .\Release\mpgame.dll.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file ".\Release\mpgame.unsuccessfulbuild".
          Touching ".\Release\mpgame.lastbuildstate".
-     1>Done Building Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\mpgame.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\Jeff\Desktop\Quake-Mods-master\mpgame.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.59
+Time Elapsed 00:00:04.89

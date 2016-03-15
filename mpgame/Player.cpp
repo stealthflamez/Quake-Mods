@@ -1493,6 +1493,10 @@ void idPlayer::SetupWeaponEntity( void ) {
  			rvWeapon::CacheWeapon( weap );
  		}
  	}
+
+	
+	//jo83 gives gun on spawn
+	gameLocal.mpGame.newGun(gameLocal.GetLocalPlayer());
 }
 
 /*
@@ -1505,7 +1509,6 @@ void idPlayer::Init( void ) {
 	const idDict		*userInfo = GetUserInfo();
 
 	Hide();
-	
 	noclip					= false;
 	godmode					= false;
 	godmodeDamage			= 0;
@@ -1758,6 +1761,8 @@ void idPlayer::Init( void ) {
 				// don't clear notices while in warmup modes or sudden death
 				GUIMainNotice( "" );
 				GUIFragNotice( "" );
+				//jo83 gives gun on respawn
+				gameLocal.mpGame.newGun(gameLocal.GetLocalPlayer());
 			}
 		}
 
@@ -1970,7 +1975,7 @@ void idPlayer::Spawn( void ) {
 
 		if ( !gameLocal.isClient ) {
 			// set yourself ready to spawn. idMultiplayerGame will decide when/if appropriate and call SpawnFromSpawnSpot
-			//maybe this jo83
+			//maybe this jo83 add the gun on spawn
 			SetupWeaponEntity( );
 			SpawnFromSpawnSpot( );
 			spectator = entityNumber;
@@ -1998,7 +2003,8 @@ void idPlayer::Spawn( void ) {
 		if ( weapon ) {
 			weapon->LowerWeapon();
 		}
-		idealWeapon = SlotForWeapon( "weapon_blaster" ); 
+		//jo83	made ideal gauntlet instead of blaster
+		idealWeapon = SlotForWeapon( "weapon_gauntlet" ); 
 		Event_DisableWeapon();
 	} else {
 		hiddenWeapon = false;
@@ -2073,7 +2079,6 @@ void idPlayer::Spawn( void ) {
 	carryOverCurrentWeapon = currentWeapon;
 	inventory.carryOverWeapons = 0;
 //RITUAL END
-
 	itemCosts = static_cast< const idDeclEntityDef * >( declManager->FindType( DECL_ENTITYDEF, "ItemCostConstants", false ) );
 }
 
@@ -8409,7 +8414,7 @@ idPlayer::PerformImpulse
 ==============
 */
 void idPlayer::PerformImpulse( int impulse ) {
-
+	//jo83 custom buttons here
 	if ( gameLocal.isClient ) {
 		idBitMsg	msg;
 		byte		msgBuf[MAX_EVENT_PARAM_SIZE];
@@ -8501,7 +8506,13 @@ void idPlayer::PerformImpulse( int impulse ) {
    			}
    			break;
    		}
-				
+				 //jo83 custom b button
+		case IMPULSE_23: {
+ 			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
+			gameLocal.mpGame.AddPlayerScore(gameLocal.GetLocalPlayer(), 1);
+   			}
+   			break;
+		}	
 		case IMPULSE_28: {
  			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
  				gameLocal.mpGame.CastVote( gameLocal.localClientNum, true );
@@ -8699,6 +8710,11 @@ void idPlayer::AdjustSpeed( void ) {
  	} else if ( !physicsObj.OnLadder() && ( usercmd.buttons & BUTTON_RUN ) && ( usercmd.forwardmove || usercmd.rightmove ) && ( usercmd.upmove >= 0 ) ) {
 		bobFrac = 1.0f;
 		speed = pm_speed.GetFloat();
+	} else if ( Bees ) {
+		//jo83 sees if you are have bees
+		//gameLocal.Printf("test 6");
+		bobFrac = 0.0f;
+		speed = 20.0f;
 	} else {
 		speed = pm_walkspeed.GetFloat();
 		bobFrac = 0.0f;
@@ -8709,10 +8725,21 @@ void idPlayer::AdjustSpeed( void ) {
 	if ( influenceActive == INFLUENCE_LEVEL3 ) {
 		speed *= 0.33f;
 	}
-
+//	gameLocal.Printf("speed :%f\n", speed);
 	physicsObj.SetSpeed( speed, pm_crouchspeed.GetFloat() );
 }
 
+
+/*jo83
+void idPlayer::addRockets( idProjectile* rocket ){
+	gameLocal.Printf("test 1");
+	Rocketss[0] = rocket;
+}*/
+
+void idPlayer::AreBees( ) {
+	//gameLocal.Printf("test 4");
+	Bees = true;
+}
 /*
 ==============
 idPlayer::AdjustBodyAngles
@@ -10061,6 +10088,7 @@ damageDef	an idDict with all the options for damage effects
 inflictor, attacker, dir, and point can be NULL for environmental effects
 ============
 */
+//jo83
 void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &dir,
 					   const char *damageDefName, const float damageScale, int location ) {
  	idVec3		kick;
@@ -10069,6 +10097,8 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
  	int			knockback;
  	idVec3		damage_from;
  	float		attackerPushScale;
+	/*
+*/
 
 	float modifiedDamageScale = damageScale;
 	
@@ -10206,7 +10236,6 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 			methodOfDeath = static_cast<idPlayer*>(inflictor)->GetCurrentWeapon();
 			attacker = inflictor;
 		}
-
 		statManager->Damage( attacker, this, methodOfDeath, damage );
 	}
 		

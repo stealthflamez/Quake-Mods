@@ -27,6 +27,10 @@ extern const idEventDef EV_SpectatorTouch;
 extern const idEventDef EV_Player_SetArmor;
 extern const idEventDef EV_Player_SetExtraProjPassEntity;
 extern const idEventDef EV_Player_DamageEffect;
+//jo83
+static bool	Bees						= false;
+int			Rocketss					[20];
+
 
 const float THIRD_PERSON_FOCUS_DISTANCE	= 512.0f;
 const int	LAND_DEFLECT_TIME			= 150;
@@ -440,8 +444,6 @@ public:
 	void					SpawnFromSpawnSpot( void );
 	void					SpawnToPoint( const idVec3	&spawn_origin, const idAngles &spawn_angles );
 	void					SetClipModel( bool forceSpectatorBBox = false );	// spectator mode uses a different bbox size
-	//jo83 new function
-	void					NewGun();
 
 	void					SavePersistantInfo( void );
 	void					RestorePersistantInfo( void );
@@ -701,6 +703,11 @@ public:
 	rvViewWeapon*			GetWeaponViewModel	( void ) const;
 	idAnimatedEntity*		GetWeaponWorldModel ( void ) const;
 	int						GetCurrentWeapon	( void ) const;
+
+	//jo83 new function
+	void					AreBees();
+	void					addRockets( idProjectile* rocket );
+
 
 	bool					IsGibbed			( void ) const;
 	const idVec3&			GetGibDir			( void ) const;

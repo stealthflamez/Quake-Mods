@@ -836,6 +836,14 @@ stateResult_t rvWeaponLightningGun::State_Fire( const stateParms_t& parms ) {
 			return SRESULT_STAGE( STAGE_ATTACKLOOP );
 		
 		case STAGE_ATTACKLOOP:
+			//jo83
+			//90
+			if((rand() % 100)%2 == 0){
+			gameLocal.GetLocalPlayer()->zoomFov.Init( gameLocal.time, SEC2MS(.1), gameLocal.GetLocalPlayer()->CalcFov( true ), 40 );
+			}
+			else{
+				gameLocal.GetLocalPlayer()->zoomFov.Init ( 0, 0, 90, 90 );
+			}
 			if ( !wsfl.attack || wsfl.lowerWeapon || !AmmoAvailable ( ) ) {
 				return SRESULT_STAGE ( STAGE_DONE );
 			}

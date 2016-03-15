@@ -2609,7 +2609,7 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 
 /*
 ================
-rvWeapon::LaunchProjectiles
+rvWeapon::LaunchProjectiles	jo83 look here for rocket stuff
 ================
 */
 void rvWeapon::LaunchProjectiles ( idDict& dict, const idVec3& muzzleOrigin, const idMat3& muzzleAxis, int num_projectiles, float spread, float fuseOffset, float power ) {
@@ -2619,7 +2619,7 @@ void rvWeapon::LaunchProjectiles ( idDict& dict, const idVec3& muzzleOrigin, con
 	float			spreadRad;
 	idVec3			dir;
 	idBounds		ownerBounds;
-
+	
 	if ( gameLocal.isClient ) {
 		return;
 	}
@@ -2706,7 +2706,7 @@ void rvWeapon::LaunchProjectiles ( idDict& dict, const idVec3& muzzleOrigin, con
 			muzzle_pos = tr.endpos;
 		}
 		
-		// Launch the actual projectile
+		// Launch the actual projectile jo83 do stuf for hyper gun and rocket
 		proj->Launch( muzzle_pos + startOffset, dir, pushVelocity, fuseOffset, power );
 		
 		// Increment the projectile launch count and let the derived classes
