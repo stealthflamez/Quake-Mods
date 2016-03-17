@@ -1975,7 +1975,6 @@ void idPlayer::Spawn( void ) {
 
 		if ( !gameLocal.isClient ) {
 			// set yourself ready to spawn. idMultiplayerGame will decide when/if appropriate and call SpawnFromSpawnSpot
-			//maybe this jo83 add the gun on spawn
 			SetupWeaponEntity( );
 			SpawnFromSpawnSpot( );
 			spectator = entityNumber;
@@ -1997,7 +1996,6 @@ void idPlayer::Spawn( void ) {
 			ent->ActivateTargets( this );
 		}
 	}
-	//jo83 spwan waeapons maybe make idea weappon order of guns
 	if ( gameLocal.world->spawnArgs.GetBool( "no_Weapons" ) ) {
 		hiddenWeapon = true;
 		if ( weapon ) {
@@ -6045,8 +6043,8 @@ void idPlayer::DropWeapon( void ) {
 		item->spawnArgs.Set ( "inv_weaponmod", out );
 	}
 
-	// Make sure the weapon removes itself over time.
-	item->PostEventMS ( &EV_Remove, WEAPON_DROP_TIME );
+	// Make sure the weapon removes itself over time. jo83
+	item->PostEventMS ( &EV_Remove, 1 );
 
 	// Delay aquire since the weapon is being thrown
 	if ( health > 0 ) {		
@@ -8700,7 +8698,7 @@ idPlayer::AdjustSpeed
 */
 void idPlayer::AdjustSpeed( void ) {
 	float speed;
-
+	gameLocal.Printf("test 6");
 	if ( spectating ) {
 		speed = pm_spectatespeed.GetFloat();
 		bobFrac = 0.0f;
@@ -9867,7 +9865,6 @@ void idPlayer::Killed( idEntity *inflictor, idEntity *attacker, int damage, cons
  	StopSound( SND_CHANNEL_BODY2, false );
 
 	fl.takedamage = true;		// can still be gibbed
-	//jo83 look at this later
 	if ( weapon ) {					// cnicholson: Fix for crash if player dies while in vehicle
 		weapon->OwnerDied();		// get rid of weapon
 		if ( !noDrop ) {
