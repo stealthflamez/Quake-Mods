@@ -8273,7 +8273,6 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 
 	playerState[ player->entityNumber ].fragCount += amount;
 	playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
-	newGun( player );
 }
 
 void idMultiplayerGame::AddPlayerTeamScore( idPlayer* player, int amount ) {

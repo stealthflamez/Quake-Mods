@@ -1,734 +1,182 @@
-﻿Build started 3/10/2016 8:52:32 PM.
-     1>Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\game.vcxproj" on node 3 (build target(s)).
+﻿Build started 3/19/2016 3:10:48 AM.
+     1>Project "C:\Users\Jeff\266-quake\game.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.unsuccessfulbuild".
+         Touching "C:\Users\Jeff\266-quake\Release\game.unsuccessfulbuild".
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Ox /Ob1 /Oi /Oy- /D NDEBUG /D _WINDOWS /D _FINAL /D GAME_DLL /D Q4SDK /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS- /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yc /Fp"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/game.pch" /Fo"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/" /Fd"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\gamex86.pdb" /Gd /TP /analyze- /errorReport:prompt game\AF.cpp
-         AF.cpp
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\../idlib/Lib.h(120): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(406): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(446): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(501): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(503): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(512): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(514): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(527): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(605): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(615): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(625): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(634): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(643): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Str.h(652): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\Base64.h(80): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script/Script_Interpreter.h(151): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script/Script_Interpreter.h(153): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\AF.cpp(1152): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\AF.cpp(1282): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\AF.cpp(1290): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W4 /WX- /Ox /Ob1 /Oi /Oy- /D NDEBUG /D _WINDOWS /D _FINAL /D GAME_DLL /D Q4SDK /D _VC80_UPGRADE=0x0710 /D _WINDLL /D _MBCS /GF /Gm- /EHsc /MT /GS- /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /GR /Yu /Fp"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/game.pch" /Fo"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/" /Fd"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\gamex86.pdb" /Gd /TP /analyze- /errorReport:prompt game\Actor.cpp game\AFEntity.cpp game\BrittleFracture.cpp game\Camera.cpp game\client\ClientAFEntity.cpp game\Effect.cpp game\Entity.cpp game\FreeView.cpp game\Game_Debug.cpp game\Game_local.cpp game\Game_Log.cpp game\Game_network.cpp game\GameEdit.cpp game\Healing_Station.cpp game\Icon.cpp game\IconManager.cpp game\IK.cpp game\Instance.cpp game\Item.cpp game\Light.cpp game\LipSync.cpp game\Misc.cpp game\Moveable.cpp game\Mover.cpp game\MultiplayerGame.cpp game\Playback.cpp game\Player_Cheats.cpp game\Projectile.cpp game\Pvs.cpp game\SecurityCamera.cpp game\Sound.cpp game\SplineMover.cpp game\Target.cpp game\TramGate.cpp game\Trigger.cpp game\WorldSpawn.cpp game\ai\AAS.cpp game\ai\AAS_debug.cpp game\ai\AAS_Find.cpp game\ai\AAS_pathing.cpp game\ai\AAS_routing.cpp game\ai\AAS_tactical.cpp game\ai\AI.cpp game\ai\AI_Actions.cpp game\ai\AI_Announcements.cpp game\ai\AI_Debug.cpp game\ai\AI_events.cpp game\ai\AI_Manager.cpp game\ai\AI_Medic.cpp game\ai\AI_Move.cpp game\ai\AI_pathing.cpp game\ai\AI_States.cpp game\ai\AI_Tactical.cpp game\ai\AI_Util.cpp game\ai\Monster_Berserker.cpp game\ai\Monster_BossBuddy.cpp game\ai\Monster_BossMakron.cpp game\ai\Monster_ConvoyGround.cpp game\ai\Monster_ConvoyHover.cpp game\ai\Monster_FailedTransfer.cpp game\ai\Monster_Fatty.cpp game\ai\Monster_Gladiator.cpp game\ai\Monster_Grunt.cpp game\ai\Monster_Gunner.cpp game\ai\Monster_Harvester.cpp game\ai\Monster_HarvesterDispersal.cpp game\ai\Monster_HeavyHoverTank.cpp game\ai\Monster_IronMaiden.cpp game\ai\Monster_LightTank.cpp game\ai\Monster_NetworkGuardian.cpp game\ai\Monster_RepairBot.cpp game\ai\Monster_Scientist.cpp game\ai\Monster_Sentry.cpp game\ai\Monster_SlimyTransfer.cpp game\ai\Monster_StreamProtector.cpp game\ai\Monster_StroggFlyer.cpp game\ai\Monster_StroggHover.cpp game\ai\Monster_StroggMarine.cpp game\ai\Monster_TeleportDropper.cpp game\ai\Monster_Turret.cpp game\ai\Monster_TurretFlying.cpp game\spawner.cpp game\ai\VehicleAI.cpp game\anim\Anim.cpp game\anim\Anim_Blend.cpp game\anim\Anim_Import.cpp game\anim\Anim_Testmodel.cpp game\client\ClientEffect.cpp game\client\ClientEntity.cpp game\client\ClientModel.cpp game\client\ClientMoveable.cpp game\gamesys\Class.cpp game\gamesys\DebugGraph.cpp game\gamesys\Event.cpp game\gamesys\SaveGame.cpp game\gamesys\State.cpp game\gamesys\SysCmds.cpp game\gamesys\SysCvar.cpp game\physics\Clip.cpp game\physics\Force.cpp game\physics\Force_Constant.cpp game\physics\Force_Drag.cpp game\physics\Force_Field.cpp game\physics\Force_Spring.cpp game\physics\Physics.cpp game\physics\Physics_Actor.cpp game\physics\Physics_AF.cpp game\physics\Physics_Base.cpp game\physics\Physics_Monster.cpp game\physics\Physics_Parametric.cpp game\physics\Physics_Particle.cpp game\physics\Physics_Player.cpp game\physics\Physics_RigidBody.cpp game\physics\Physics_Static.cpp game\physics\Physics_StaticMulti.cpp game\physics\Physics_VehicleMonster.cpp game\physics\Push.cpp game\Player.cpp game\Player_States.cpp game\PlayerView.cpp game\script\Script_Compiler.cpp game\script\Script_Interpreter.cpp game\script\Script_Program.cpp game\script\Script_Thread.cpp game\script\ScriptFuncUtility.cpp game\vehicle\Vehicle.cpp game\vehicle\Vehicle_DropPod.cpp game\vehicle\Vehicle_Walker.cpp game\vehicle\VehicleAnimated.cpp game\vehicle\VehicleController.cpp game\vehicle\VehicleDriver.cpp game\vehicle\VehicleMonster.cpp game\vehicle\VehicleParts.cpp game\vehicle\VehiclePosition.cpp game\vehicle\VehicleRigid.cpp game\vehicle\VehicleSpline.cpp game\vehicle\VehicleStatic.cpp game\Weapon.cpp game\weapon\WeaponBlaster.cpp game\weapon\WeaponDarkMatterGun.cpp game\weapon\WeaponGauntlet.cpp game\weapon\WeaponGrenadeLauncher.cpp game\weapon\WeaponHyperblaster.cpp game\weapon\WeaponLightningGun.cpp game\weapon\WeaponMachinegun.cpp game\weapon\WeaponNailgun.cpp game\weapon\WeaponNapalmGun.cpp game\weapon\WeaponRailgun.cpp game\weapon\WeaponRocketLauncher.cpp game\weapon\WeaponShotgun.cpp game\mp\Buying.cpp game\mp\CTF.cpp game\mp\GameState.cpp game\mp\Tourney.cpp game\mp\VoiceComms.cpp game\mp\stats\StatEvent.cpp game\mp\stats\StatManager.cpp game\mp\stats\StatWindow.cpp
-         Actor.cpp
-         AFEntity.cpp
-     1>game\AFEntity.cpp(3103): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         BrittleFracture.cpp
-         Camera.cpp
-         ClientAFEntity.cpp
-     1>game\client\ClientAFEntity.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Effect.cpp
-         Entity.cpp
-         FreeView.cpp
-         Game_Debug.cpp
-         Game_local.cpp
-     1>game\Game_local.cpp(3718): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
-     1>game\Game_local.cpp(4857): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\Game_local.cpp(8306): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
-     1>game\Game_local.cpp(8321): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
-         Game_Log.cpp
-         Game_network.cpp
-     1>game\Game_network.cpp(2028): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
-     1>game\Game_network.cpp(2286): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
-         GameEdit.cpp
-     1>game\GameEdit.cpp(336): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         Healing_Station.cpp
-         Icon.cpp
-         IconManager.cpp
-         IK.cpp
-         Instance.cpp
-         Item.cpp
-     1>game\Item.cpp(1631): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         Light.cpp
-         Generating Code...
-         Compiling...
-         LipSync.cpp
-         Misc.cpp
-         Moveable.cpp
-         Mover.cpp
-         MultiplayerGame.cpp
-     1>game\MultiplayerGame.cpp(1577): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\MultiplayerGame.cpp(3376): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\MultiplayerGame.cpp(6650): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>game\MultiplayerGame.cpp(6653): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>game\MultiplayerGame.cpp(6656): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>game\MultiplayerGame.cpp(6659): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>game\MultiplayerGame.cpp(6662): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>game\MultiplayerGame.cpp(6668): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-         Playback.cpp
-         Player_Cheats.cpp
-         Projectile.cpp
-         Pvs.cpp
-         SecurityCamera.cpp
-         Sound.cpp
-         SplineMover.cpp
-     1>game\SplineMover.cpp(1663): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         Target.cpp
-         TramGate.cpp
-         Trigger.cpp
-         WorldSpawn.cpp
-         AAS.cpp
-     1>game\ai\AAS.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AAS_debug.cpp
-     1>game\ai\AAS_debug.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AAS_Find.cpp
-     1>game\ai\AAS_Find.cpp(11): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AAS_pathing.cpp
-     1>game\ai\AAS_pathing.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Generating Code...
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(240): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(225): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(263): warning C4750: 'float __thiscall idCurve<class idVec3>::GetLengthBetweenKnots(int,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(285): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(240): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(225): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(263): warning C4750: 'float __thiscall idCurve<class idVec3>::GetLengthBetweenKnots(int,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(285): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(326): warning C4750: 'float __thiscall idCurve<class idVec3>::GetLengthBetweenKnots(int,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\game\mover.cpp(2142): warning C4750: 'float __thiscall idCurve<class idVec3>::GetTimeForLength(float,float)const ': function with _alloca() inlined into a loop
-         Compiling...
-         AAS_routing.cpp
-     1>game\ai\AAS_routing.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AAS_tactical.cpp
-     1>game\ai\AAS_tactical.cpp(52): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI.cpp
-     1>game\ai\AI.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Actions.cpp
-     1>game\ai\AI_Actions.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Announcements.cpp
-     1>game\ai\AI_Announcements.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Debug.cpp
-     1>game\ai\AI_Debug.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_events.cpp
-     1>game\ai\AI_events.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Manager.cpp
-     1>game\ai\AI_Manager.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Medic.cpp
-     1>game\ai\AI_Medic.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Move.cpp
-     1>game\ai\AI_Move.cpp(13): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_pathing.cpp
-     1>game\ai\AI_pathing.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_States.cpp
-     1>game\ai\AI_States.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Tactical.cpp
-     1>game\ai\AI_Tactical.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         AI_Util.cpp
-     1>game\ai\AI_Util.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Berserker.cpp
-     1>game\ai\Monster_Berserker.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_BossBuddy.cpp
-     1>game\ai\Monster_BossBuddy.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_BossMakron.cpp
-     1>game\ai\Monster_BossMakron.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_ConvoyGround.cpp
-     1>game\ai\Monster_ConvoyGround.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_ConvoyHover.cpp
-     1>game\ai\Monster_ConvoyHover.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_FailedTransfer.cpp
-     1>game\ai\Monster_FailedTransfer.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Generating Code...
-         Compiling...
-         Monster_Fatty.cpp
-     1>game\ai\Monster_Fatty.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Gladiator.cpp
-     1>game\ai\Monster_Gladiator.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Grunt.cpp
-     1>game\ai\Monster_Grunt.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Gunner.cpp
-     1>game\ai\Monster_Gunner.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Harvester.cpp
-     1>game\ai\Monster_Harvester.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_HarvesterDispersal.cpp
-     1>game\ai\Monster_HarvesterDispersal.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_HeavyHoverTank.cpp
-     1>game\ai\Monster_HeavyHoverTank.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_IronMaiden.cpp
-     1>game\ai\Monster_IronMaiden.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_LightTank.cpp
-     1>game\ai\Monster_LightTank.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_NetworkGuardian.cpp
-     1>game\ai\Monster_NetworkGuardian.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_RepairBot.cpp
-     1>game\ai\Monster_RepairBot.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Scientist.cpp
-     1>game\ai\Monster_Scientist.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Sentry.cpp
-     1>game\ai\Monster_Sentry.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_SlimyTransfer.cpp
-     1>game\ai\Monster_SlimyTransfer.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_StreamProtector.cpp
-     1>game\ai\Monster_StreamProtector.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_StroggFlyer.cpp
-     1>game\ai\Monster_StroggFlyer.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_StroggHover.cpp
-     1>game\ai\Monster_StroggHover.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_StroggMarine.cpp
-     1>game\ai\Monster_StroggMarine.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_TeleportDropper.cpp
-     1>game\ai\Monster_TeleportDropper.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Monster_Turret.cpp
-     1>game\ai\Monster_Turret.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Generating Code...
-         Compiling...
-         Monster_TurretFlying.cpp
-     1>game\ai\Monster_TurretFlying.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         spawner.cpp
-         VehicleAI.cpp
-     1>game\ai\VehicleAI.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Anim.cpp
-     1>game\anim\Anim.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Anim_Blend.cpp
-     1>game\anim\Anim_Blend.cpp(6): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Anim_Import.cpp
-     1>game\anim\Anim_Import.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Anim_Testmodel.cpp
-     1>game\anim\Anim_Testmodel.cpp(24): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         ClientEffect.cpp
-     1>game\client\ClientEffect.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         ClientEntity.cpp
-     1>game\client\ClientEntity.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         ClientModel.cpp
-     1>game\client\ClientModel.cpp(9): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         ClientMoveable.cpp
-     1>game\client\ClientMoveable.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Class.cpp
-     1>game\gamesys\Class.cpp(8): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         DebugGraph.cpp
-     1>game\gamesys\DebugGraph.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Event.cpp
-     1>game\gamesys\Event.cpp(8): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\gamesys\Event.cpp(55): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\gamesys\Event.cpp(97): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\gamesys\Event.cpp(115): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\gamesys\Event.cpp(122): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>game\gamesys\Event.cpp(135): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-         SaveGame.cpp
-     1>game\gamesys\SaveGame.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\gamesys\SaveGame.cpp(1087): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-         State.cpp
-     1>game\gamesys\State.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         SysCmds.cpp
-     1>game\gamesys\SysCmds.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\gamesys\SysCmds.cpp(814): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\gamesys\SysCmds.cpp(1680): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-         SysCvar.cpp
-     1>game\gamesys\SysCvar.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\gamesys\SysCvar.cpp(35): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-         Clip.cpp
-     1>game\physics\Clip.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Force.cpp
-     1>game\physics\Force.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Generating Code...
-         Compiling...
-         Force_Constant.cpp
-     1>game\physics\Force_Constant.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Force_Drag.cpp
-     1>game\physics\Force_Drag.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Force_Field.cpp
-     1>game\physics\Force_Field.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Force_Spring.cpp
-     1>game\physics\Force_Spring.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics.cpp
-     1>game\physics\Physics.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Actor.cpp
-     1>game\physics\Physics_Actor.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_AF.cpp
-     1>game\physics\Physics_AF.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Base.cpp
-     1>game\physics\Physics_Base.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Monster.cpp
-     1>game\physics\Physics_Monster.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Parametric.cpp
-     1>game\physics\Physics_Parametric.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Particle.cpp
-     1>game\physics\Physics_Particle.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Player.cpp
-     1>game\physics\Physics_Player.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_RigidBody.cpp
-     1>game\physics\Physics_RigidBody.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_Static.cpp
-     1>game\physics\Physics_Static.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_StaticMulti.cpp
-     1>game\physics\Physics_StaticMulti.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Physics_VehicleMonster.cpp
-     1>game\physics\Physics_VehicleMonster.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Push.cpp
-     1>game\physics\Push.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Player.cpp
-         Player_States.cpp
-         PlayerView.cpp
-         Generating Code...
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(240): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(225): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(263): warning C4750: 'float __thiscall idCurve<class idVec3>::GetLengthBetweenKnots(int,int)const ': function with _alloca() inlined into a loop
-     1>c:\users\jeff\it266\quake-mods\quake4\idlib\math\curve.h(285): warning C4750: 'float __thiscall idCurve<class idVec3>::RombergIntegral(float,float,int)const ': function with _alloca() inlined into a loop
-         Compiling...
-         Script_Compiler.cpp
-     1>game\script\Script_Compiler.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\script\Script_Compiler.cpp(226): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-     1>game\script\Script_Compiler.cpp(244): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-         Script_Interpreter.cpp
-     1>game\script\Script_Interpreter.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\script\Script_Interpreter.cpp(447): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-     1>game\script\Script_Interpreter.cpp(472): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-         Script_Program.cpp
-     1>game\script\Script_Program.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\script\Script_Program.cpp(543): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\script\Script_Program.cpp(587): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\script\Script_Program.cpp(631): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-     1>game\script\Script_Program.cpp(759): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         Script_Thread.cpp
-     1>game\script\Script_Thread.cpp(2): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\script\Script_Thread.cpp(919): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-     1>game\script\Script_Thread.cpp(935): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'vsprintf'
-         ScriptFuncUtility.cpp
-     1>game\script\ScriptFuncUtility.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Vehicle.cpp
-     1>game\vehicle\Vehicle.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\vehicle\Vehicle.cpp(1577): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(325) : see declaration of 'sscanf'
-         Vehicle_DropPod.cpp
-     1>game\vehicle\Vehicle_DropPod.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Vehicle_Walker.cpp
-     1>game\vehicle\Vehicle_Walker.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleAnimated.cpp
-     1>game\vehicle\VehicleAnimated.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleController.cpp
-     1>game\vehicle\VehicleController.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleDriver.cpp
-     1>game\vehicle\VehicleDriver.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleMonster.cpp
-     1>game\vehicle\VehicleMonster.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleParts.cpp
-     1>game\vehicle\VehicleParts.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehiclePosition.cpp
-     1>game\vehicle\VehiclePosition.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleRigid.cpp
-     1>game\vehicle\VehicleRigid.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleSpline.cpp
-     1>game\vehicle\VehicleSpline.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VehicleStatic.cpp
-     1>game\vehicle\VehicleStatic.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Weapon.cpp
-     1>game\Weapon.cpp(2329): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-         WeaponBlaster.cpp
-     1>game\weapon\WeaponBlaster.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponDarkMatterGun.cpp
-     1>game\weapon\WeaponDarkMatterGun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Generating Code...
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script\script_compiler.cpp(347): warning C4702: unreachable code
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script\script_compiler.cpp(1008): warning C4702: unreachable code
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script\script_compiler.cpp(1302): warning C4702: unreachable code
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script\script_compiler.cpp(1336): warning C4702: unreachable code
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script\script_compiler.cpp(1347): warning C4702: unreachable code
-     1>c:\users\jeff\it266\quake-mods\quake4\game\script\script_compiler.cpp(1379): warning C4702: unreachable code
-         Compiling...
-         WeaponGauntlet.cpp
-     1>game\weapon\WeaponGauntlet.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponGrenadeLauncher.cpp
-     1>game\weapon\WeaponGrenadeLauncher.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponHyperblaster.cpp
-     1>game\weapon\WeaponHyperblaster.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponLightningGun.cpp
-     1>game\weapon\WeaponLightningGun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponMachinegun.cpp
-     1>game\weapon\WeaponMachinegun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponNailgun.cpp
-     1>game\weapon\WeaponNailgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponNapalmGun.cpp
-     1>game\weapon\WeaponNapalmGun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponRailgun.cpp
-     1>game\weapon\WeaponRailgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponRocketLauncher.cpp
-     1>game\weapon\WeaponRocketLauncher.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         WeaponShotgun.cpp
-     1>game\weapon\WeaponShotgun.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Buying.cpp
-     1>game\mp\Buying.cpp(12): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         CTF.cpp
-     1>game\mp\CTF.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         GameState.cpp
-     1>game\mp\GameState.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Tourney.cpp
-     1>game\mp\Tourney.cpp(7): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         VoiceComms.cpp
-     1>game\mp\VoiceComms.cpp(1): warning C4627: '#include "../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         StatEvent.cpp
-     1>game\mp\stats\StatEvent.cpp(7): warning C4627: '#include "../../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         StatManager.cpp
-     1>game\mp\stats\StatManager.cpp(7): warning C4627: '#include "../../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-     1>game\mp\stats\StatManager.cpp(914): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.inl(112) : see declaration of 'localtime'
-     1>game\mp\stats\StatManager.cpp(915): warning C4996: 'asctime': This function or variable may be unsafe. Consider using asctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\time.h(153) : see declaration of 'asctime'
-         StatWindow.cpp
-     1>game\mp\stats\StatWindow.cpp(7): warning C4627: '#include "../../../idlib/precompiled.h"': skipped when looking for precompiled header use
-                 Add directive to 'precompiled header (.h) file' or rebuild precompiled header
-         Generating Code...
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.dll) does not match the Linker's OutputFile property value (C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\SPGamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\Users\Jeff\266-quake\Release\game.dll) does not match the Linker's OutputFile property value (C:\Users\Jeff\266-quake\Release\SPGamex86.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(game) does not match the Linker's OutputFile property value (SPGamex86). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\SPGamex86.dll" /INCREMENTAL:NO /NOLOGO "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idLib.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\game\game.def" /MANIFEST /ManifestFile:"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\gamex86.pdb" /MAP:"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\gamex86.map" /MAPINFO:EXPORTS /STACK:"4194304" /LARGEADDRESSAWARE /OPT:REF /OPT:ICF /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE:NO /MACHINE:X86 /DLL "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Actor.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AF.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AFEntity.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/BrittleFracture.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Camera.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/ClientAFEntity.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Effect.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Entity.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/FreeView.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Game_Debug.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Game_local.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Game_Log.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Game_network.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/GameEdit.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Healing_Station.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Icon.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/IconManager.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/IK.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Instance.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Item.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Light.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/LipSync.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Misc.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Moveable.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Mover.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/MultiplayerGame.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Playback.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Player_Cheats.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Projectile.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Pvs.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/SecurityCamera.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Sound.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/SplineMover.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Target.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/TramGate.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Trigger.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WorldSpawn.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AAS.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AAS_debug.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AAS_Find.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AAS_pathing.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AAS_routing.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AAS_tactical.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Actions.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Announcements.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Debug.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_events.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Manager.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Medic.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Move.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_pathing.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_States.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Tactical.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/AI_Util.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Berserker.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_BossBuddy.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_BossMakron.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_ConvoyGround.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_ConvoyHover.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_FailedTransfer.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Fatty.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Gladiator.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Grunt.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Gunner.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Harvester.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_HarvesterDispersal.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_HeavyHoverTank.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_IronMaiden.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_LightTank.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_NetworkGuardian.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_RepairBot.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Scientist.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Sentry.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_SlimyTransfer.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_StreamProtector.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_StroggFlyer.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_StroggHover.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_StroggMarine.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_TeleportDropper.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_Turret.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Monster_TurretFlying.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/spawner.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleAI.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Anim.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Anim_Blend.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Anim_Import.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Anim_Testmodel.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/ClientEffect.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/ClientEntity.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/ClientModel.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/ClientMoveable.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Class.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/DebugGraph.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Event.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/SaveGame.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/State.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/SysCmds.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/SysCvar.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Clip.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Force.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Force_Constant.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Force_Drag.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Force_Field.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Force_Spring.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Actor.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_AF.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Base.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Monster.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Parametric.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Particle.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Player.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_RigidBody.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_Static.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_StaticMulti.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Physics_VehicleMonster.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Push.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Player.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Player_States.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/PlayerView.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Script_Compiler.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Script_Interpreter.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Script_Program.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Script_Thread.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/ScriptFuncUtility.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Vehicle.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Vehicle_DropPod.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Vehicle_Walker.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleAnimated.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleController.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleDriver.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleMonster.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleParts.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehiclePosition.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleRigid.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleSpline.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VehicleStatic.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Weapon.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponBlaster.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponDarkMatterGun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponGauntlet.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponGrenadeLauncher.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponHyperblaster.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponLightningGun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponMachinegun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponNailgun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponNapalmGun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponRailgun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponRocketLauncher.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/WeaponShotgun.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Buying.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/CTF.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/GameState.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/Tourney.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/VoiceComms.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/StatEvent.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/StatManager.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game/StatWindow.obj"
-         "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\idlib.lib" /MACHINE:I386 /fixed:no 
-            Creating library C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\SPGamex86.lib and object C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\SPGamex86.exp
-         game.vcxproj -> C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.dll
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jeff\266-quake\Release\SPGamex86.dll" /INCREMENTAL:NO /NOLOGO "C:\Users\Jeff\266-quake\Release\idLib.lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:".\game\game.def" /MANIFEST /ManifestFile:"C:\Users\Jeff\266-quake\Release\game.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Jeff\266-quake\Release\gamex86.pdb" /MAP:"C:\Users\Jeff\266-quake\Release\gamex86.map" /MAPINFO:EXPORTS /STACK:"4194304" /LARGEADDRESSAWARE /OPT:REF /OPT:ICF /TLBID:1 /BASE:"0x20000000" /DYNAMICBASE:NO /MACHINE:X86 /DLL "C:\Users\Jeff\266-quake\Release\game/Actor.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AF.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AFEntity.obj"
+         "C:\Users\Jeff\266-quake\Release\game/BrittleFracture.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Camera.obj"
+         "C:\Users\Jeff\266-quake\Release\game/ClientAFEntity.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Effect.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Entity.obj"
+         "C:\Users\Jeff\266-quake\Release\game/FreeView.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Game_Debug.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Game_local.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Game_Log.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Game_network.obj"
+         "C:\Users\Jeff\266-quake\Release\game/GameEdit.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Healing_Station.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Icon.obj"
+         "C:\Users\Jeff\266-quake\Release\game/IconManager.obj"
+         "C:\Users\Jeff\266-quake\Release\game/IK.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Instance.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Item.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Light.obj"
+         "C:\Users\Jeff\266-quake\Release\game/LipSync.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Misc.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Moveable.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Mover.obj"
+         "C:\Users\Jeff\266-quake\Release\game/MultiplayerGame.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Playback.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Player_Cheats.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Projectile.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Pvs.obj"
+         "C:\Users\Jeff\266-quake\Release\game/SecurityCamera.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Sound.obj"
+         "C:\Users\Jeff\266-quake\Release\game/SplineMover.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Target.obj"
+         "C:\Users\Jeff\266-quake\Release\game/TramGate.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Trigger.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WorldSpawn.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AAS.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AAS_debug.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AAS_Find.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AAS_pathing.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AAS_routing.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AAS_tactical.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Actions.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Announcements.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Debug.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_events.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Manager.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Medic.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Move.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_pathing.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_States.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Tactical.obj"
+         "C:\Users\Jeff\266-quake\Release\game/AI_Util.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Berserker.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_BossBuddy.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_BossMakron.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_ConvoyGround.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_ConvoyHover.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_FailedTransfer.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Fatty.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Gladiator.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Grunt.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Gunner.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Harvester.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_HarvesterDispersal.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_HeavyHoverTank.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_IronMaiden.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_LightTank.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_NetworkGuardian.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_RepairBot.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Scientist.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Sentry.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_SlimyTransfer.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_StreamProtector.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_StroggFlyer.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_StroggHover.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_StroggMarine.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_TeleportDropper.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_Turret.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Monster_TurretFlying.obj"
+         "C:\Users\Jeff\266-quake\Release\game/spawner.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleAI.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Anim.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Anim_Blend.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Anim_Import.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Anim_Testmodel.obj"
+         "C:\Users\Jeff\266-quake\Release\game/ClientEffect.obj"
+         "C:\Users\Jeff\266-quake\Release\game/ClientEntity.obj"
+         "C:\Users\Jeff\266-quake\Release\game/ClientModel.obj"
+         "C:\Users\Jeff\266-quake\Release\game/ClientMoveable.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Class.obj"
+         "C:\Users\Jeff\266-quake\Release\game/DebugGraph.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Event.obj"
+         "C:\Users\Jeff\266-quake\Release\game/SaveGame.obj"
+         "C:\Users\Jeff\266-quake\Release\game/State.obj"
+         "C:\Users\Jeff\266-quake\Release\game/SysCmds.obj"
+         "C:\Users\Jeff\266-quake\Release\game/SysCvar.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Clip.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Force.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Force_Constant.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Force_Drag.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Force_Field.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Force_Spring.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Actor.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_AF.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Base.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Monster.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Parametric.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Particle.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Player.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_RigidBody.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_Static.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_StaticMulti.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Physics_VehicleMonster.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Push.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Player.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Player_States.obj"
+         "C:\Users\Jeff\266-quake\Release\game/PlayerView.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Script_Compiler.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Script_Interpreter.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Script_Program.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Script_Thread.obj"
+         "C:\Users\Jeff\266-quake\Release\game/ScriptFuncUtility.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Vehicle.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Vehicle_DropPod.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Vehicle_Walker.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleAnimated.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleController.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleDriver.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleMonster.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleParts.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehiclePosition.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleRigid.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleSpline.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VehicleStatic.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Weapon.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponBlaster.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponDarkMatterGun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponGauntlet.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponGrenadeLauncher.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponHyperblaster.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponLightningGun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponMachinegun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponNailgun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponNapalmGun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponRailgun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponRocketLauncher.obj"
+         "C:\Users\Jeff\266-quake\Release\game/WeaponShotgun.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Buying.obj"
+         "C:\Users\Jeff\266-quake\Release\game/CTF.obj"
+         "C:\Users\Jeff\266-quake\Release\game/GameState.obj"
+         "C:\Users\Jeff\266-quake\Release\game/Tourney.obj"
+         "C:\Users\Jeff\266-quake\Release\game/VoiceComms.obj"
+         "C:\Users\Jeff\266-quake\Release\game/StatEvent.obj"
+         "C:\Users\Jeff\266-quake\Release\game/StatManager.obj"
+         "C:\Users\Jeff\266-quake\Release\game/StatWindow.obj"
+         "C:\Users\Jeff\266-quake\Release\idlib.lib" /MACHINE:I386 /fixed:no 
+            Creating library C:\Users\Jeff\266-quake\Release\SPGamex86.lib and object C:\Users\Jeff\266-quake\Release\SPGamex86.exp
+         game.vcxproj -> C:\Users\Jeff\266-quake\Release\game.dll
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\SPGamex86.dll;#2" /manifest "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.dll.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Jeff\266-quake\Release\SPGamex86.dll;#2" /manifest "C:\Users\Jeff\266-quake\Release\game.dll.intermediate.manifest"
        FinalizeBuildStatus:
-         Deleting file "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.unsuccessfulbuild".
-         Touching "C:\Users\Jeff\IT266\Quake-Mods\quake4\Release\game.lastbuildstate".
-     1>Done Building Project "C:\Users\Jeff\IT266\Quake-Mods\quake4\game.vcxproj" (build target(s)).
+         Deleting file "C:\Users\Jeff\266-quake\Release\game.unsuccessfulbuild".
+         Touching "C:\Users\Jeff\266-quake\Release\game.lastbuildstate".
+     1>Done Building Project "C:\Users\Jeff\266-quake\game.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:48.61
+Time Elapsed 00:00:03.26

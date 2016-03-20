@@ -261,9 +261,11 @@ rvStatDamageTaken::rvStatDamageTaken( int t, int p, int w, int d ) : rvStat( t )
 	if( gameLocal.GetLocalPlayer()->GetCurrentWeapon() == w )
 	{
 		//gameLocal.Printf("weapon num: %d ", w);
-		//gameLocal.clientEntities[w]->physics
+		gameLocal.clientEntities[w]->physics
 			//enphysicsObj.SetSpeed( 100, pm_crouchspeed.GetFloat() );
 	}*/
+
+	
 	playerClientNum = p;
 	weapon = w;
 	damage = d;

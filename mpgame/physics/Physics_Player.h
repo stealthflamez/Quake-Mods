@@ -56,6 +56,8 @@ public:
 
 							// initialisation
 	void					SetSpeed( const float newWalkSpeed, const float newCrouchSpeed );
+	//jo83 new function for gravity
+	void					gotGrav(  );
 	void					SetMaxStepHeight( const float newMaxStepHeight );
 	float					GetMaxStepHeight( void ) const;
 	void					SetMaxJumpHeight( const float newMaxJumpHeight );
@@ -111,10 +113,11 @@ public:	// common physics interface
 	bool					IsDead( void ) const;
 
 	void					SetClipModelNoLink( idClipModel *clip );
+	playerPState_t			current;
 
 private:
 	// player physics state
-	playerPState_t			current;
+	//playerPState_t			current;
 	playerPState_t			saved;
 
 	// properties

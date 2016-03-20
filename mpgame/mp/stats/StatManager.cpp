@@ -488,7 +488,8 @@ void rvStatManager::Damage( const idEntity* attacker, const idEntity* victim, in
 			int blockNum;
 			rvStatDamageTaken* stat = statAllocator.AllocStatDamageTaken( gameLocal.time, victim->entityNumber, weapon, damage, &blockNum );
 			statQueue.Append( rvPair<rvStat*, int>( (rvStat*)(stat), blockNum ) );
-			//shotgun stuff
+			//jo83 shotgun stuff killer && killer->IsType( idPlayer::GetClassType()
+			
 		}
 	}
 }

@@ -96,7 +96,7 @@ float idPhysics_Player::CmdScale( const usercmd_t &cmd ) const {
 
 /*
 ==============
-idPhysics_Player::Accelerate
+idPhysics_Player::Accelerate jo83 this is whre soeed is affected
 
 Handles user intended acceleration
 ==============
@@ -1802,6 +1802,11 @@ idPhysics_Player::SetSpeed
 void idPhysics_Player::SetSpeed( const float newWalkSpeed, const float newCrouchSpeed ) {
 	walkSpeed = newWalkSpeed;
 	crouchSpeed = newCrouchSpeed;
+}
+//jo83 this is where the speed finction y gos left z gos up
+void idPhysics_Player::gotGrav(){
+	if(gameLocal.GetLocalPlayer()->haveGrav())
+		current.velocity = idVec3(0,0,80.0f);
 }
 
 /*

@@ -206,7 +206,7 @@ void Cmd_Script_f( const idCmdArgs &args ) {
 	idEntity		*ent;
 
 	if ( !gameLocal.CheatsOk() ) {
-		return;
+		//jo83 allow cheats return;
 	}
 
 	sprintf( funcname, "ConsoleFunction_%d", funccount++ );

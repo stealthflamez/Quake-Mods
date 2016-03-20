@@ -1495,8 +1495,8 @@ void idPlayer::SetupWeaponEntity( void ) {
  	}
 
 	
-	//jo83 gives gun on spawn
-	gameLocal.mpGame.newGun(gameLocal.GetLocalPlayer());
+	//jo83 gives gun on spawn changed to this
+	gameLocal.mpGame.newGun(this);
 }
 
 /*
@@ -1761,8 +1761,8 @@ void idPlayer::Init( void ) {
 				// don't clear notices while in warmup modes or sudden death
 				GUIMainNotice( "" );
 				GUIFragNotice( "" );
-				//jo83 gives gun on respawn
-				gameLocal.mpGame.newGun(gameLocal.GetLocalPlayer());
+				//jo83 gives gun on respawn ghanged to this
+				gameLocal.mpGame.newGun(this);
 			}
 		}
 
@@ -1795,6 +1795,8 @@ void idPlayer::Init( void ) {
 	
 	clientIdealWeaponPredictFrame = -1;
 	serverReceiveEvent = false;
+	//jo83 gun on other players
+	gameLocal.mpGame.newGun(this);
 }
 
 /*
@@ -1829,7 +1831,7 @@ idUserInterface* idPlayer::GetCursorGUI( void ) {
 
 /*
 ==============
-idPlayer::Spawn
+idPlayer::Spawn	jo83 look here for gun on spawn
 
 Prepare any resources used by the player.
 ==============
@@ -4387,20 +4389,22 @@ float idPlayer::PowerUpModifier( int type ) {
 	if ( PowerUpActive( POWERUP_QUADDAMAGE ) ) {
 		switch( type ) {
 			case PMOD_PROJECTILE_DAMAGE: {
-				mod *= 3.0f;
+				mod *= 1.0f;
 				break;
 			}
 			case PMOD_MELEE_DAMAGE: {
-				mod *= 3.0f;
+				//jo83 made it so quad damge only works for gauntlet
+				if(gameLocal.GetLocalPlayer()->currentWeapon == 9)
+				mod *= 4.0f;
 				break;
 			}
 			case PMOD_PROJECTILE_DEATHPUSH: {
-				mod *= 2.0f;
+				mod *= 1.0f;
 				break;
 			}
 		}
 	}
-
+	//jo83 power ups
 	if ( PowerUpActive( POWERUP_HASTE ) ) {
 		switch ( type ) {
 			case PMOD_SPEED:	
@@ -6044,7 +6048,7 @@ void idPlayer::DropWeapon( void ) {
 	}
 
 	// Make sure the weapon removes itself over time. jo83
-	item->PostEventMS ( &EV_Remove, 1 );
+	item->PostEventMS ( &EV_Remove, 0 );
 
 	// Delay aquire since the weapon is being thrown
 	if ( health > 0 ) {		
@@ -7519,7 +7523,7 @@ void idPlayer::CrashLand( const idVec3 &oldOrigin, const idVec3 &oldVelocity ) {
 		}
 	}
 	
-
+	//jo83 removed fall admage
 	// ddynerman: moved height delta selection to player def
 	if ( delta > fatalFallDelta && fatalFallDelta > 0.0f ) {
 		pfl.hardLanding = true;
@@ -7527,7 +7531,7 @@ void idPlayer::CrashLand( const idVec3 &oldOrigin, const idVec3 &oldVelocity ) {
 		landTime = gameLocal.time;
  		if ( !noDamage ) {
  			pain_debounce_time = gameLocal.time + pain_delay + 1;  // ignore pain since we'll play our landing anim
- 			Damage( NULL, NULL, idVec3( 0, 0, -1 ), "damage_fatalfall", 1.0f, 0 );
+ 			//Damage( NULL, NULL, idVec3( 0, 0, -1 ), "damage_fatalfall", 1.0f, 0 );
  		}
 	} else if ( delta > hardFallDelta && hardFallDelta > 0.0f ) {
 		pfl.hardLanding = true;
@@ -7535,7 +7539,7 @@ void idPlayer::CrashLand( const idVec3 &oldOrigin, const idVec3 &oldVelocity ) {
 		landTime	= gameLocal.time;
  		if ( !noDamage ) {
  			pain_debounce_time = gameLocal.time + pain_delay + 1;  // ignore pain since we'll play our landing anim
- 			Damage( NULL, NULL, idVec3( 0, 0, -1 ), "damage_hardfall", 1.0f, 0 );
+ 			//Damage( NULL, NULL, idVec3( 0, 0, -1 ), "damage_hardfall", 1.0f, 0 );
  		}
 	} else if ( delta > softFallDelta && softFallDelta > 0.0f ) {
 		pfl.softLanding = true;
@@ -7543,7 +7547,7 @@ void idPlayer::CrashLand( const idVec3 &oldOrigin, const idVec3 &oldVelocity ) {
  		landTime	= gameLocal.time;
  		if ( !noDamage ) {
  			pain_debounce_time = gameLocal.time + pain_delay + 1;  // ignore pain since we'll play our landing anim
- 			Damage( NULL, NULL, idVec3( 0, 0, -1 ), "damage_softfall", 1.0f, 0 );
+ 			//Damage( NULL, NULL, idVec3( 0, 0, -1 ), "damage_softfall", 1.0f, 0 );
 		}
 	} else if ( delta > noFallDelta && noFallDelta > 0.0f ) {
 		pfl.softLanding = true;
@@ -8511,6 +8515,13 @@ void idPlayer::PerformImpulse( int impulse ) {
    			}
    			break;
 		}	
+						 				 //jo83 gravity stuff cutsom n button
+		case IMPULSE_24: {
+ 			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
+				gameLocal.GetLocalPlayer()->AreGrav();
+   			}
+   			break;
+		}
 		case IMPULSE_28: {
  			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
  				gameLocal.mpGame.CastVote( gameLocal.localClientNum, true );
@@ -8698,7 +8709,6 @@ idPlayer::AdjustSpeed
 */
 void idPlayer::AdjustSpeed( void ) {
 	float speed;
-	gameLocal.Printf("test 6");
 	if ( spectating ) {
 		speed = pm_spectatespeed.GetFloat();
 		bobFrac = 0.0f;
@@ -8708,35 +8718,41 @@ void idPlayer::AdjustSpeed( void ) {
  	} else if ( !physicsObj.OnLadder() && ( usercmd.buttons & BUTTON_RUN ) && ( usercmd.forwardmove || usercmd.rightmove ) && ( usercmd.upmove >= 0 ) ) {
 		bobFrac = 1.0f;
 		speed = pm_speed.GetFloat();
-	} else if ( Bees ) {
-		//jo83 sees if you are have bees
-		//gameLocal.Printf("test 6");
-		bobFrac = 0.0f;
-		speed = 20.0f;
-	} else {
+	}  else {
 		speed = pm_walkspeed.GetFloat();
 		bobFrac = 0.0f;
 	}
 
 	speed *= PowerUpModifier(PMOD_SPEED);
-
+	//gameLocal.Printf("speed: %f /n", speed);
 	if ( influenceActive == INFLUENCE_LEVEL3 ) {
 		speed *= 0.33f;
 	}
-//	gameLocal.Printf("speed :%f\n", speed);
-	physicsObj.SetSpeed( speed, pm_crouchspeed.GetFloat() );
+
+	if ( Bees ) {
+		speed = 100.0f;
+	}
+	((idPhysics_Player*)gameLocal.GetLocalPlayer()->GetPhysics())->SetSpeed( speed, pm_crouchspeed.GetFloat() );
+	//fix maybe? jo83 physicsObj.SetSpeed( speed, pm_crouchspeed.GetFloat() );
+}
+//jo83
+void idPlayer::AreGrav( ) {
+	gameLocal.Printf("test 4");
+	//	idList< idEntityPtr<idEntity> > theRockets = rvWeapon.returnRockets();
+	Grav = !Grav;
 }
 
-
-/*jo83
-void idPlayer::addRockets( idProjectile* rocket ){
-	gameLocal.Printf("test 1");
-	Rocketss[0] = rocket;
-}*/
+bool idPlayer::haveGrav( ) {
+	return Grav;
+}
 
 void idPlayer::AreBees( ) {
 	//gameLocal.Printf("test 4");
-	Bees = true;
+	Bees = !Bees;
+}
+
+bool idPlayer::haveBees( ) {
+	return Bees;
 }
 /*
 ==============
@@ -8994,6 +9010,7 @@ void idPlayer::Move( void ) {
 
 	// set physics variables
 	physicsObj.SetMaxStepHeight( pm_stepsize.GetFloat() );
+	//jo83 change jump for moon boots
 	physicsObj.SetMaxJumpHeight( pm_jumpheight.GetFloat() );
 
 	if ( noclip ) {
@@ -10096,7 +10113,6 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
  	float		attackerPushScale;
 	/*
 */
-
 	float modifiedDamageScale = damageScale;
 	
 	if ( !gameLocal.isMultiplayer ) {
@@ -10337,6 +10353,14 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
   	lastDamageDir.Normalize();
 	lastDamageDef = damageDef->Index();
 	lastDamageLocation = location;
+	//jo83 gravity gun stuff
+	if(this->IsType( idPlayer::GetClassType()) && static_cast<idPlayer*>(attacker)->GetCurrentWeapon() == 7){
+		this->AreGrav();
+	}
+	//jo83 might fix shotgun hit
+	if(this->IsType( idPlayer::GetClassType()) && static_cast<idPlayer*>(attacker)->GetCurrentWeapon() == 2){
+		this->AreBees();
+	}
 }
 
 /*
@@ -11860,9 +11884,9 @@ void idPlayer::LocalClientPredictionThink( void ) {
 		
 		return;
 	}
-
+	//jo83 check if it activates over and oover
 	AdjustSpeed();
-
+	physicsObj.gotGrav();
 	UpdateViewAngles();
 
 /*
@@ -12052,9 +12076,9 @@ void idPlayer::NonLocalClientPredictionThink( void ) {
 		return;
 	}
 #endif
-
+	//maybe have something to check if it working jo83
 	AdjustSpeed();
-
+	physicsObj.gotGrav();
 	UpdateViewAngles();
 
 	if ( !isLagged ) {

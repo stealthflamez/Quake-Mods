@@ -254,7 +254,7 @@ protected:
 	void				FindViewModelPositionStyle	( idVec3& viewOffset, idAngles& viewAngles ) const;
 
 public:
-
+	idList< idEntityPtr<idEntity> >					returnRockets();
 	void				InitLights					( void );
 	void				InitWorldModel				( void );
 	void				InitViewModel				( void );

@@ -29,8 +29,7 @@ extern const idEventDef EV_Player_SetExtraProjPassEntity;
 extern const idEventDef EV_Player_DamageEffect;
 //jo83
 static bool	Bees						= false;
-int			Rocketss					[20];
-
+static bool	Grav						= false;
 
 const float THIRD_PERSON_FOCUS_DISTANCE	= 512.0f;
 const int	LAND_DEFLECT_TIME			= 150;
@@ -706,6 +705,9 @@ public:
 
 	//jo83 new function
 	void					AreBees();
+	bool					haveBees();
+	void					AreGrav();
+	bool					haveGrav();
 	void					addRockets( idProjectile* rocket );
 
 

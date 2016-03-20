@@ -24,7 +24,7 @@ public:
 	void					Restore( idRestoreGame *saveFile );
 	void					PreSave				( void );
 	void					PostSave			( void );
-
+	idList< idEntityPtr<idEntity> >	returnRockets		(  );
 
 #ifdef _XENON
 	virtual bool		AllowAutoAim			( void ) const { return false; }
@@ -91,6 +91,11 @@ rvWeaponRocketLauncher::~rvWeaponRocketLauncher ( void ) {
 rvWeaponRocketLauncher::Spawn
 ================
 */
+//jo83 maybe gets rockets
+idList< idEntityPtr<idEntity> > rvWeaponRocketLauncher::returnRockets(){
+	return guideEnts;
+}
+
 void rvWeaponRocketLauncher::Spawn ( void ) {
 	float f;
 

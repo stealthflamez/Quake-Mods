@@ -332,7 +332,7 @@ void idMultiplayerGame::SpawnPlayer( int clientNum ) {
 	if ( p->IsLocalClient() && gameLocal.GetLocalPlayer() ) {
 		tourneyGUI.SetupTourneyGUI( gameLocal.GetLocalPlayer()->mphud, scoreBoard );
 	}
-
+	//jo83 might fix
 	lastVOAnnounce = 0;
 }
 
@@ -493,43 +493,53 @@ void idMultiplayerGame::newGun( idPlayer* player ){
 	switch ( playerState[player->entityNumber].fragCount )
 			{
 			case 9:
+				//DONE Magic
 				player->GiveItem( "weapon_gauntlet" );
 				break;
 			case 8:
-				player->GiveItem( "weapon_napalmgun" );
-				break;
-
-			case 7:
+				//DONE Future
 				player->GiveItem( "weapon_lightninggun" );
 				break;
+			case 7:
+				//DONE Magic
+				player->GiveItem( "weapon_napalmgun" );
+				break;
 			case 6:
+				//Future
 				player->GiveItem( "weapon_railgun" );
 				break;
 			case 5:
+				//Magic
 				player->GiveItem( "weapon_rocketlauncher" );
 				break;
 			case 4:
+				//Future
 				player->GiveItem( "weapon_grenadelauncher" );
 				break;
 			case 3:
-				player->GiveItem( "weapon_hyperblaster" );
-				break;
-			case 2:
+				//Magic
 				player->GiveItem( "weapon_shotgun" );
 				break;
+			case 2:
+				//Future
+				player->GiveItem( "weapon_hyperblaster" );
+				break;
 			case 1:
-				gameLocal.Printf("test 4");
+				//DONE Magic
 				player->GiveItem( "weapon_blaster" );
 				break;
 			case 0:
-				gameLocal.Printf("test 3");
+				//DONE Future
 				player->GiveItem( "weapon_machinegun" );
 				break;
 			default:
 				break;
 			}
 }
-
+//*jo83
+void idMultiplayerGame::addRockets( idEntityPtr<idEntity> rocket ){
+	gameLocal.Printf("test 1");
+}
 
 /*
 ================
@@ -1846,9 +1856,9 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 				// in flag games, we subtract suicides from team-score rather than player score, which is the true
 				// kill count
 				if( gameLocal.IsFlagGameType() ) {
-					AddPlayerTeamScore( killer == dead ? dead : killer, -1 );
+					AddPlayerTeamScore( killer == dead ? dead : killer, 0 );
 				} else {
-					AddPlayerScore( killer == dead ? dead : killer, -1 );
+					AddPlayerScore( killer == dead ? dead : killer, 0 );
 				}
 
 			} else {
@@ -1865,7 +1875,7 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 			if( gameLocal.gameType == GAME_TDM ) {
 				if ( killer == dead || killer->team == dead->team ) {
 					// suicide or teamkill
-					AddTeamScore( killer->team, -1 );
+					AddTeamScore( killer->team, 0 );
 				} else {
 					AddTeamScore( killer->team, 1 );
 				}			
@@ -1876,7 +1886,7 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 			if( gameLocal.gameType != GAME_TOURNEY || ((rvTourneyGameState*)gameState)->GetArena( killer->GetArena() ).GetState() != AS_WARMUP ) {
 				if ( killer != dead )
 				{
-					if(killer->GetCurrentWeapon() == 9)
+					if(killer->GetCurrentWeapon() == 9 && playerState[ killer->entityNumber ].fragCount != 9)
 						{
 							AddPlayerScore( dead, -1);
 						}
@@ -1890,7 +1900,7 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 			// in tourney mode, frags track performance over the entire level load, team score keeps track of
 			// individual rounds
 			if( gameLocal.gameType == GAME_TOURNEY ) {
-				AddPlayerTeamScore( killer, ( killer == dead ) ? -1 : 1 );
+				AddPlayerTeamScore( killer, ( killer == dead ) ? 0: 0 );
 			}
 		}
 	} else {
@@ -1898,9 +1908,9 @@ void idMultiplayerGame::PlayerDeath( idPlayer *dead, idPlayer *killer, int metho
 
 		// flag gametypes subtract points from teamscore, not playerscore
 		if( gameLocal.IsFlagGameType() ) {
-			AddPlayerTeamScore( dead, -1 );
+			AddPlayerTeamScore( dead, 0 );
 		} else {
-			AddPlayerScore( dead, -1 );
+			AddPlayerScore( dead, 0 );
 		}
 
 		if( gameLocal.gameType == GAME_TOURNEY ) {
@@ -8345,6 +8355,12 @@ void idMultiplayerGame::AddPlayerScore( idPlayer* player, int amount ) {
 	}
 	if( playerState[ player->entityNumber ].fragCount + amount < 0 ){
 		return;
+	}
+	if ( playerState[ player->entityNumber ].fragCount + 1 == 10){
+		if(player->GetCurrentWeapon() != 9)
+		{
+			return;
+		}
 	}
 	playerState[ player->entityNumber ].fragCount += amount;
 	playerState[ player->entityNumber ].fragCount = idMath::ClampInt( MP_PLAYER_MINFRAGS, MP_PLAYER_MAXFRAGS, playerState[ player->entityNumber ].fragCount );
