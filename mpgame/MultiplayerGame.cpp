@@ -515,12 +515,12 @@ void idMultiplayerGame::newGun( idPlayer* player ){
 				player->GiveItem( "weapon_grenadelauncher" );
 				break;
 			case 3:
-				//Magic
-				player->GiveItem( "weapon_shotgun" );
+				//DONE Magic
+				player->GiveItem( "weapon_hyperblaster" );
 				break;
 			case 2:
 				//Future
-				player->GiveItem( "weapon_nailgun" );
+				player->GiveItem( "weapon_shotgun" );
 				break;
 			case 1:
 				//DONE Magic

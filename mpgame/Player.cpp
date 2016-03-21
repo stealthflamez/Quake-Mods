@@ -4403,15 +4403,15 @@ float idPlayer::PowerUpModifier( int type ) {
 			}
 		}
 	}
-	//jo83 power ups
+	//jo83 jump power ups
 	if ( PowerUpActive( POWERUP_HASTE ) ) {
 		switch ( type ) {
 			case PMOD_SPEED:	
-				mod *= 1.3f;
+				mod *= 5.0f;
 				break;
 
 			case PMOD_FIRERATE:
-				mod *= 0.7f;
+				mod *= 1.0f;
 				break;
 		}
 	}
@@ -4513,6 +4513,7 @@ void idPlayer::StartPowerUpEffect( int powerup ) {
 			break;
 		}
 		case POWERUP_QUADDAMAGE: {
+			//jo83 assasin
 			powerUpOverlay = quadOverlay;
 
 			StopEffect( "fx_regeneration" );
@@ -4528,7 +4529,7 @@ void idPlayer::StartPowerUpEffect( int powerup ) {
 		}
 
 		case POWERUP_REGENERATION: {
-
+			//jo83 resistance
 			// when buy mode is enabled, we use the guard effect for team powerup regen ( more readable than everyone going red )
 			if ( gameLocal.IsTeamPowerups() ) {
 				// don't setup the powerup on dead bodies, it will float up where the body is invisible and the orientation will be messed up
@@ -4556,6 +4557,7 @@ void idPlayer::StartPowerUpEffect( int powerup ) {
 		}
 
 		case POWERUP_HASTE: {
+			//jo83 moon jump
 			powerUpOverlay = hasteOverlay;
 
 			hasteEffect = PlayEffect( "fx_haste", GetPhysics()->GetOrigin(), GetPhysics()->GetAxis(), true );
@@ -4563,6 +4565,7 @@ void idPlayer::StartPowerUpEffect( int powerup ) {
 		}
 		
 		case POWERUP_INVISIBILITY: {
+			//jo83 change to haste
 			powerUpOverlay = invisibilityOverlay;
 
 			powerUpSkin = declManager->FindSkin( spawnArgs.GetString( "skin_invisibility" ), false );
@@ -8511,7 +8514,7 @@ void idPlayer::PerformImpulse( int impulse ) {
 				 //jo83 custom b button
 		case IMPULSE_23: {
  			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
-			gameLocal.mpGame.AddPlayerScore(gameLocal.GetLocalPlayer(), 1);
+			gameLocal.mpGame.AddPlayerScore(this, 1);
    			}
    			break;
 		}	
@@ -8570,9 +8573,10 @@ void idPlayer::PerformImpulse( int impulse ) {
 		case IMPULSE_126:	break; // Unused
 		case IMPULSE_127:	break; // Unused
 // RITUAL END
-
+			//jo83 change so it fire rockets
 		case IMPULSE_50: {
-			ToggleFlashlight ( );
+			gameLocal.GetLocalPlayer()->shootRockets();
+			gameLocal.GetLocalPlayer()->shootRockets();
 			break;
 		}
 
@@ -8723,7 +8727,6 @@ void idPlayer::AdjustSpeed( void ) {
 		bobFrac = 0.0f;
 	}
 
-	speed *= PowerUpModifier(PMOD_SPEED);
 	if ( influenceActive == INFLUENCE_LEVEL3 ) {
 		speed *= 0.33f;
 	}
@@ -8762,8 +8765,13 @@ void idPlayer::shootRockets() {
 		}
 		if(gameLocal.entities[i]->IsType( idProjectile::GetClassType()))
 		{
-			idProjectile *p = static_cast<idProjectile*>(gameLocal.entities[i]);
-			p->SetSpeed( 925 );
+			bool check =static_cast<idProjectile*>(gameLocal.entities[i])->GetOwner() == gameLocal.GetLocalPlayer();
+			gameLocal.Printf("%d\n", check);
+			if(check)
+			{
+				idProjectile *p = static_cast<idProjectile*>(gameLocal.entities[i]);
+				p->SetSpeed( 925 );
+			}
 		}
 	}
 }
@@ -9024,7 +9032,7 @@ void idPlayer::Move( void ) {
 	// set physics variables
 	physicsObj.SetMaxStepHeight( pm_stepsize.GetFloat() );
 	//jo83 change jump for moon boots
-	physicsObj.SetMaxJumpHeight( pm_jumpheight.GetFloat() );
+	physicsObj.SetMaxJumpHeight( pm_jumpheight.GetFloat() *PowerUpModifier(PMOD_SPEED) );
 
 	if ( noclip ) {
 		physicsObj.SetContents( 0 );

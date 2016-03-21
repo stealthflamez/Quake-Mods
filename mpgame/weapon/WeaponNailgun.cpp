@@ -10,7 +10,6 @@
 const int NAILGUN_DRUMSPEED_STOPPED		= 0;
 const int NAILGUN_DRUMSPEED_SLOW		= 1;
 const int NAILGUN_DRUMSPEED_FAST		= 2;
-int scaler								=1;
 
 // Spinup and spindown times
 const int NAILGUN_SPINDOWN_TIME			= 1000;
@@ -132,6 +131,10 @@ void rvWeaponNailgun::Spawn ( void ) {
 	drumSpeed		= NAILGUN_DRUMSPEED_STOPPED;
 	drumSpeedIdeal	= drumSpeed;
 	drumMultiplier	= spawnArgs.GetFloat ( "drumSpeed" );
+
+	gameLocal.Printf("speed 1: %d\n",drumSpeed );
+	gameLocal.Printf("speed 1: %d\n", drumSpeedIdeal);
+	gameLocal.Printf("speed 1: %d\n",drumMultiplier );
 	
 	ExecuteState ( "ClaspClose" );	
 	SetState ( "Raise", 0 );	
@@ -315,7 +318,6 @@ rvWeaponNailgun::Think
 void rvWeaponNailgun::Think ( void ) {
 	idEntity* ent;
 	trace_t	  tr;
-	gameLocal.Printf("speed : %d \n", scaler);
 	// Let the real weapon think first
 	rvWeapon::Think ( );
 
@@ -403,9 +405,9 @@ void rvWeaponNailgun::Think ( void ) {
 	}
 	
 	UpdateGuideStatus ( (ent->GetPhysics()->GetOrigin() - playerViewOrigin).LengthFast() );
-	dynamic_cast<idGuidedProjectile*>(this)->SetSpeed( scaler );
-	scaler *= 2;
-	gameLocal.Printf("speed : %d \n", scaler);
+
+
+
 }
 
 /*
