@@ -530,8 +530,6 @@ public:
 
 	//jo83 added function
 	void			newGun( idPlayer* player );
-	idList< idEntityPtr<idEntity> >		rocketsfired;
-	void			addRockets( idEntityPtr<idEntity> rocket );
 	void			AddTeamScore ( int team, int amount );
 	void			AddPlayerScore( idPlayer* player, int amount );
 	void			AddPlayerTeamScore( idPlayer* player, int amount );

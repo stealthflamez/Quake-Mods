@@ -10,6 +10,7 @@
 const int NAILGUN_DRUMSPEED_STOPPED		= 0;
 const int NAILGUN_DRUMSPEED_SLOW		= 1;
 const int NAILGUN_DRUMSPEED_FAST		= 2;
+int scaler								=1;
 
 // Spinup and spindown times
 const int NAILGUN_SPINDOWN_TIME			= 1000;
@@ -314,7 +315,7 @@ rvWeaponNailgun::Think
 void rvWeaponNailgun::Think ( void ) {
 	idEntity* ent;
 	trace_t	  tr;
-
+	gameLocal.Printf("speed : %d \n", scaler);
 	// Let the real weapon think first
 	rvWeapon::Think ( );
 
@@ -356,7 +357,6 @@ void rvWeaponNailgun::Think ( void ) {
 	}
 	
 	ent = gameLocal.entities[tr.c.entityNum];
-	
 	//if we're using a target nailable...
 	if( ent->IsType ( rvTarget_Nailable::GetClassType()	 )	)	{
 		const char* jointName = ent->spawnArgs.GetString("lock_joint");
@@ -403,6 +403,9 @@ void rvWeaponNailgun::Think ( void ) {
 	}
 	
 	UpdateGuideStatus ( (ent->GetPhysics()->GetOrigin() - playerViewOrigin).LengthFast() );
+	dynamic_cast<idGuidedProjectile*>(this)->SetSpeed( scaler );
+	scaler *= 2;
+	gameLocal.Printf("speed : %d \n", scaler);
 }
 
 /*

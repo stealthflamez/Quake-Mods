@@ -91,10 +91,6 @@ rvWeaponRocketLauncher::~rvWeaponRocketLauncher ( void ) {
 rvWeaponRocketLauncher::Spawn
 ================
 */
-//jo83 maybe gets rockets
-idList< idEntityPtr<idEntity> > rvWeaponRocketLauncher::returnRockets(){
-	return guideEnts;
-}
 
 void rvWeaponRocketLauncher::Spawn ( void ) {
 	float f;
@@ -145,7 +141,7 @@ rvWeaponRocketLauncher::Think
 void rvWeaponRocketLauncher::Think ( void ) {	
 	trace_t	tr;
 	int		i;
-
+				
 	rocketThread.Execute ( );
 
 	// Let the real weapon think first
@@ -164,6 +160,9 @@ void rvWeaponRocketLauncher::Think ( void ) {
 
 		for ( i = guideEnts.Num() - 1; i >= 0; i -- ) {
 			idGuidedProjectile* proj = static_cast<idGuidedProjectile*>(guideEnts[i].GetEntity());
+			gameLocal.Printf("1st: %f \n", guideSpeedFast);
+			gameLocal.Printf("2st: %f \n", (1.0f - (proj->GetSpeed ( ) - guideSpeedSlow) / (guideSpeedFast - guideSpeedSlow)) * guideAccelTime);
+	
 			if ( !proj || proj->IsHidden ( ) ) {
 				guideEnts.RemoveIndex ( i );
 				continue;
@@ -171,7 +170,7 @@ void rvWeaponRocketLauncher::Think ( void ) {
 			
 			// If the rocket is still guiding then stop the guide and slow it down
 			if ( proj->GetGuideType ( ) != idGuidedProjectile::GUIDE_NONE ) {
-				proj->CancelGuide ( );				
+				proj->CancelGuide ( );	
 				proj->SetSpeed ( guideSpeedFast, (1.0f - (proj->GetSpeed ( ) - guideSpeedSlow) / (guideSpeedFast - guideSpeedSlow)) * guideAccelTime );
 			}
 		}

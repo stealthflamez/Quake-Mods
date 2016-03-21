@@ -332,7 +332,6 @@ void idMultiplayerGame::SpawnPlayer( int clientNum ) {
 	if ( p->IsLocalClient() && gameLocal.GetLocalPlayer() ) {
 		tourneyGUI.SetupTourneyGUI( gameLocal.GetLocalPlayer()->mphud, scoreBoard );
 	}
-	//jo83 might fix
 	lastVOAnnounce = 0;
 }
 
@@ -489,7 +488,6 @@ void idMultiplayerGame::ClearGuis() {
 //jo83 drops items and gives new gun depending on poiints	for some reason gun 0 and 1 are both being called
 void idMultiplayerGame::newGun( idPlayer* player ){
 	player->DropWeapon();
-	gameLocal.Printf("frag :%d", playerState[player->entityNumber].fragCount);
 	switch ( playerState[player->entityNumber].fragCount )
 			{
 			case 9:
@@ -509,11 +507,11 @@ void idMultiplayerGame::newGun( idPlayer* player ){
 				player->GiveItem( "weapon_railgun" );
 				break;
 			case 5:
-				//Magic
+				//DONE Magic
 				player->GiveItem( "weapon_rocketlauncher" );
 				break;
 			case 4:
-				//Future
+				//DONE Future
 				player->GiveItem( "weapon_grenadelauncher" );
 				break;
 			case 3:
@@ -522,7 +520,7 @@ void idMultiplayerGame::newGun( idPlayer* player ){
 				break;
 			case 2:
 				//Future
-				player->GiveItem( "weapon_hyperblaster" );
+				player->GiveItem( "weapon_nailgun" );
 				break;
 			case 1:
 				//DONE Magic
@@ -536,10 +534,7 @@ void idMultiplayerGame::newGun( idPlayer* player ){
 				break;
 			}
 }
-//*jo83
-void idMultiplayerGame::addRockets( idEntityPtr<idEntity> rocket ){
-	gameLocal.Printf("test 1");
-}
+
 
 /*
 ================

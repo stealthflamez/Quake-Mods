@@ -268,7 +268,6 @@ void idInventory::GetPersistantData( idDict &dict ) {
 	idStr	key;
 	const idKeyValue *kv;
 	const char *name;
-
 	// armor
 	dict.SetInt( "armor", armor );
 
@@ -1495,8 +1494,8 @@ void idPlayer::SetupWeaponEntity( void ) {
  	}
 
 	
-	//jo83 gives gun on spawn changed to this
-	gameLocal.mpGame.newGun(this);
+	//jo83 gives gun on spawn changed to this REMOVED NEW
+	//gameLocal.mpGame.newGun(this);
 }
 
 /*
@@ -7523,7 +7522,7 @@ void idPlayer::CrashLand( const idVec3 &oldOrigin, const idVec3 &oldVelocity ) {
 		}
 	}
 	
-	//jo83 removed fall admage
+	//jo83 removed fall damage
 	// ddynerman: moved height delta selection to player def
 	if ( delta > fatalFallDelta && fatalFallDelta > 0.0f ) {
 		pfl.hardLanding = true;
@@ -8435,7 +8434,8 @@ void idPlayer::PerformImpulse( int impulse ) {
 
 	switch( impulse ) {
 		case IMPULSE_13: {
-			Reload();
+			//jo83 check this later
+			//TURN OFF static_cast<idPhysics_Player *>(gameLocal.GetLocalPlayer()->GetPhysics())->gotGrav();
 			break;
 		}
 		case IMPULSE_14: {
@@ -8724,7 +8724,6 @@ void idPlayer::AdjustSpeed( void ) {
 	}
 
 	speed *= PowerUpModifier(PMOD_SPEED);
-	//gameLocal.Printf("speed: %f /n", speed);
 	if ( influenceActive == INFLUENCE_LEVEL3 ) {
 		speed *= 0.33f;
 	}
@@ -8732,13 +8731,11 @@ void idPlayer::AdjustSpeed( void ) {
 	if ( Bees ) {
 		speed = 100.0f;
 	}
-	((idPhysics_Player*)gameLocal.GetLocalPlayer()->GetPhysics())->SetSpeed( speed, pm_crouchspeed.GetFloat() );
-	//fix maybe? jo83 physicsObj.SetSpeed( speed, pm_crouchspeed.GetFloat() );
+	//TURN OFF static_cast<idPhysics_Player *>(gameLocal.GetLocalPlayer()->GetPhysics())->SetSpeed( speed, pm_crouchspeed.GetFloat() );
+	physicsObj.SetSpeed( speed, pm_crouchspeed.GetFloat() );
 }
-//jo83
+//jo83 new functions
 void idPlayer::AreGrav( ) {
-	gameLocal.Printf("test 4");
-	//	idList< idEntityPtr<idEntity> > theRockets = rvWeapon.returnRockets();
 	Grav = !Grav;
 }
 
@@ -8753,6 +8750,22 @@ void idPlayer::AreBees( ) {
 
 bool idPlayer::haveBees( ) {
 	return Bees;
+}
+//jo83
+void idPlayer::shootRockets() {
+	idEntity*	check;
+	for( int i = 0; i < 4095; i++ )
+	{
+		check = gameLocal.entities[ i ];
+		if ( !check ) {
+			continue;
+		}
+		if(gameLocal.entities[i]->IsType( idProjectile::GetClassType()))
+		{
+			idProjectile *p = static_cast<idProjectile*>(gameLocal.entities[i]);
+			p->SetSpeed( 925 );
+		}
+	}
 }
 /*
 ==============
@@ -9705,6 +9718,8 @@ void idPlayer::Think( void ) {
 		inBuyZone = false;
 
 	inBuyZonePrev = false;
+
+	//TURN OFFstatic_cast<idPhysics_Player *>(gameLocal.GetLocalPlayer()->GetPhysics())->gotGrav();
 }
 
 /*
@@ -11884,9 +11899,7 @@ void idPlayer::LocalClientPredictionThink( void ) {
 		
 		return;
 	}
-	//jo83 check if it activates over and oover
 	AdjustSpeed();
-	physicsObj.gotGrav();
 	UpdateViewAngles();
 
 /*
@@ -12078,7 +12091,6 @@ void idPlayer::NonLocalClientPredictionThink( void ) {
 #endif
 	//maybe have something to check if it working jo83
 	AdjustSpeed();
-	physicsObj.gotGrav();
 	UpdateViewAngles();
 
 	if ( !isLagged ) {

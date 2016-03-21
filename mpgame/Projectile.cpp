@@ -299,8 +299,6 @@ void idProjectile::Create( idEntity* _owner, const idVec3 &start, const idVec3 &
 	state = CREATED;
 
 	//jo83 add an array that hold ass missle that owner has
-	//gameLocal.Printf("test 2");
-	//gameLocal.GetLocalPlayer()->addRockets( this );
 }
 
 /*

@@ -708,7 +708,7 @@ public:
 	bool					haveBees();
 	void					AreGrav();
 	bool					haveGrav();
-	void					addRockets( idProjectile* rocket );
+	void					shootRockets();
 
 
 	bool					IsGibbed			( void ) const;

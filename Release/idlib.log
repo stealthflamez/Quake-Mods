@@ -1,18 +1,18 @@
-﻿Build started 3/19/2016 10:11:10 AM.
-     1>Project "C:\Users\Jeff\266-quake\idlib.vcxproj" on node 2 (build target(s)).
+﻿Build started 3/20/2016 10:47:18 PM.
+     1>Project "C:\Users\Jeff\Desktop\Quake-Mods\idlib.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "C:\Users\Jeff\266-quake\Release\idlib.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Creating "C:\Users\Jeff\Desktop\Quake-Mods\Release\idlib.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          All outputs are up-to-date.
          All outputs are up-to-date.
        Lib:
          All outputs are up-to-date.
-         idlib.vcxproj -> C:\Users\Jeff\266-quake\Release\idlib.lib
+         idlib.vcxproj -> C:\Users\Jeff\Desktop\Quake-Mods\Release\idlib.lib
        FinalizeBuildStatus:
-         Deleting file "C:\Users\Jeff\266-quake\Release\idlib.unsuccessfulbuild".
-         Touching "C:\Users\Jeff\266-quake\Release\idlib.lastbuildstate".
-     1>Done Building Project "C:\Users\Jeff\266-quake\idlib.vcxproj" (build target(s)).
+         Deleting file "C:\Users\Jeff\Desktop\Quake-Mods\Release\idlib.unsuccessfulbuild".
+         Touching "C:\Users\Jeff\Desktop\Quake-Mods\Release\idlib.lastbuildstate".
+     1>Done Building Project "C:\Users\Jeff\Desktop\Quake-Mods\idlib.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.16
+Time Elapsed 00:00:00.30
