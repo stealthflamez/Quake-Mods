@@ -32,7 +32,8 @@ static bool	Bees						= false;
 static bool	Grav						= false;
 static int	BeesTime					= 0;
 static int  GravTime					= 0;
-
+static bool	resMag						= false;
+static bool	resFut						= false;
 
 const float THIRD_PERSON_FOCUS_DISTANCE	= 512.0f;
 const int	LAND_DEFLECT_TIME			= 150;

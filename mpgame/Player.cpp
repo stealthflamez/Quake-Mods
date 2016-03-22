@@ -4935,6 +4935,18 @@ void idPlayer::UpdatePowerUps( void ) {
 	bool playWearoffSound = false;
 	
 	idPlayer *p = gameLocal.GetLocalPlayer();
+
+	if (PowerUpActive( POWERUP_INVISIBILITY ))
+	{
+		resMag = true;
+	}
+
+	if (PowerUpActive( POWERUP_REGENERATION ))
+	{
+		resFut = true;
+	}
+
+
 	if ( p && ( p->spectating && p->spectator == entityNumber || !p->spectating && p->entityNumber == entityNumber ) ) {
 		playWearoffSound = true;
 	}
@@ -9379,6 +9391,7 @@ Called every tic for each player
 void idPlayer::Think( void ) {
 	renderEntity_t *headRenderEnt;
 	//jo83 do a clean for bees
+
 	if(gameLocal.GetLocalPlayer()->haveBees())
 	{
 		gameLocal.Printf("test 2 \n");
@@ -10064,7 +10077,11 @@ void idPlayer::CalcDamagePoints( idEntity *inflictor, idEntity *attacker, const 
 
 	damageDef->GetInt( "damage", "20", damage );
 	damage = GetDamageForLocation( damage, location );
-
+	//jo83 maybe half damage
+		if( resMag && (static_cast<idPlayer*>(attacker)->currentWeapon == 1 || static_cast<idPlayer*>(attacker)->currentWeapon == 2 || static_cast<idPlayer*>(attacker)->currentWeapon == 4 || static_cast<idPlayer*>(attacker)->currentWeapon == 7 || static_cast<idPlayer*>(attacker)->currentWeapon == 8 ))
+			damage = damage/2;
+		if( resFut && (static_cast<idPlayer*>(attacker)->currentWeapon == 9 || static_cast<idPlayer*>(attacker)->currentWeapon == 10 || static_cast<idPlayer*>(attacker)->currentWeapon == 6 || static_cast<idPlayer*>(attacker)->currentWeapon == 3 || static_cast<idPlayer*>(attacker)->currentWeapon == 0 ))
+			damage = damage/2;
 	// optional different damage in team games
 	if ( gameLocal.isMultiplayer && gameLocal.IsTeamGame() && damageDef->GetInt( "damage_team" ) ) {
 		damage = damageDef->GetInt( "damage_team" );
@@ -10292,7 +10309,7 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 
 	// move the world direction vector to local coordinates
 	ClientDamageEffects( damageDef->dict, dir, damage );
-
+			
  	// inform the attacker that they hit someone
  	attacker->DamageFeedback( this, inflictor, damage );
 	
@@ -10308,6 +10325,9 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 			methodOfDeath = static_cast<idPlayer*>(inflictor)->GetCurrentWeapon();
 			attacker = inflictor;
 		}
+
+
+
 		statManager->Damage( attacker, this, methodOfDeath, damage );
 	}
 		

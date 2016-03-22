@@ -1,4 +1,4 @@
-﻿Build started 3/21/2016 9:47:00 PM.
+﻿Build started 3/21/2016 11:38:25 PM.
      1>Project "C:\Users\Jeff\Quake-Mods\mpgame.vcxproj" on node 3 (build target(s)).
      1>InitializeBuildStatus:
          Creating ".\Release\mpgame.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -182,4 +182,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:07.46
+Time Elapsed 00:00:10.37

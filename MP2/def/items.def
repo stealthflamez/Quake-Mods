@@ -288,7 +288,7 @@ entityDef item_armor_small
 	"inherit"				"item_armor"
 	"editor_usage"			"#str_107325"
 	"inv_name"				"#str_107325"
-	"inv_armor"				"200"
+	"inv_armor"				"100"
 	"editor_ignore"			"0"
 	"simple_icon_scale"		"32.0"
 }
