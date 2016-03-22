@@ -30,6 +30,9 @@ extern const idEventDef EV_Player_DamageEffect;
 //jo83
 static bool	Bees						= false;
 static bool	Grav						= false;
+static int	BeesTime					= 0;
+static int  GravTime					= 0;
+
 
 const float THIRD_PERSON_FOCUS_DISTANCE	= 512.0f;
 const int	LAND_DEFLECT_TIME			= 150;
@@ -706,6 +709,8 @@ public:
 	//jo83 new function
 	void					AreBees();
 	bool					haveBees();
+	void					changeBeeTime( int time );
+	void					changeGravTime( int time );
 	void					AreGrav();
 	bool					haveGrav();
 	void					shootRockets();

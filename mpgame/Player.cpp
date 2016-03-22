@@ -8514,7 +8514,8 @@ void idPlayer::PerformImpulse( int impulse ) {
 				 //jo83 custom b button
 		case IMPULSE_23: {
  			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
-			gameLocal.mpGame.AddPlayerScore(this, 1);
+				idPlayer* p = this;
+				gameLocal.mpGame.AddPlayerScore(p, 1);
    			}
    			break;
 		}	
@@ -8522,7 +8523,9 @@ void idPlayer::PerformImpulse( int impulse ) {
 		case IMPULSE_24: {
  			if ( gameLocal.isClient || entityNumber == gameLocal.localClientNum ) {
 				gameLocal.GetLocalPlayer()->AreGrav();
-   			}
+				this->changeGravTime ( gameLocal.time );
+				gameLocal.Printf("test 6 \n %d", BeesTime);
+			}
    			break;
 		}
 		case IMPULSE_28: {
@@ -8575,7 +8578,6 @@ void idPlayer::PerformImpulse( int impulse ) {
 // RITUAL END
 			//jo83 change so it fire rockets
 		case IMPULSE_50: {
-			gameLocal.GetLocalPlayer()->shootRockets();
 			gameLocal.GetLocalPlayer()->shootRockets();
 			break;
 		}
@@ -8731,9 +8733,16 @@ void idPlayer::AdjustSpeed( void ) {
 		speed *= 0.33f;
 	}
 
-	if ( Bees ) {
-		speed = 100.0f;
+	if ( Bees )
+	{
+		speed = 60.0f;
 	}
+	else
+	{
+		speed = 320.0f;
+	}
+
+	gameLocal.Printf("normal \n%f",speed);
 	//TURN OFF static_cast<idPhysics_Player *>(gameLocal.GetLocalPlayer()->GetPhysics())->SetSpeed( speed, pm_crouchspeed.GetFloat() );
 	physicsObj.SetSpeed( speed, pm_crouchspeed.GetFloat() );
 }
@@ -8745,12 +8754,16 @@ void idPlayer::AreGrav( ) {
 bool idPlayer::haveGrav( ) {
 	return Grav;
 }
-
+void idPlayer::changeGravTime( int time ) {
+	GravTime = time;
+}
+void idPlayer::changeBeeTime( int time ) {
+	BeesTime = time;
+}
 void idPlayer::AreBees( ) {
 	//gameLocal.Printf("test 4");
 	Bees = !Bees;
 }
-
 bool idPlayer::haveBees( ) {
 	return Bees;
 }
@@ -9365,6 +9378,29 @@ Called every tic for each player
 */
 void idPlayer::Think( void ) {
 	renderEntity_t *headRenderEnt;
+	//jo83 do a clean for bees
+	if(gameLocal.GetLocalPlayer()->haveBees())
+	{
+		gameLocal.Printf("test 2 \n");
+		if(gameLocal.time > BeesTime + SEC2MS( 5 ))
+		{
+			gameLocal.Printf("test 3 \n");
+			gameLocal.GetLocalPlayer()->AreBees();
+		}
+	}
+
+	if(gameLocal.GetLocalPlayer()->haveGrav())
+	{
+		gameLocal.Printf("test 2 \n");
+
+		static_cast<idPhysics_Player *>(gameLocal.GetLocalPlayer()->GetPhysics())->gotGrav();
+		if(gameLocal.time > GravTime + SEC2MS( 3 ))
+		{
+			gameLocal.Printf("test 3 \n");
+			gameLocal.GetLocalPlayer()->AreGrav();
+		}
+	}
+
 
 	if ( talkingNPC ) {
 		if ( !talkingNPC.IsValid() ) {
@@ -10378,11 +10414,13 @@ void idPlayer::Damage( idEntity *inflictor, idEntity *attacker, const idVec3 &di
 	lastDamageLocation = location;
 	//jo83 gravity gun stuff
 	if(this->IsType( idPlayer::GetClassType()) && static_cast<idPlayer*>(attacker)->GetCurrentWeapon() == 7){
-		this->AreGrav();
+		static_cast<idPlayer*>(this)->AreGrav();
+		this->changeGravTime( gameLocal.time );
 	}
 	//jo83 might fix shotgun hit
 	if(this->IsType( idPlayer::GetClassType()) && static_cast<idPlayer*>(attacker)->GetCurrentWeapon() == 2){
-		this->AreBees();
+		static_cast<idPlayer*>(this)->AreBees();
+		this->changeBeeTime( gameLocal.time );
 	}
 }
 
